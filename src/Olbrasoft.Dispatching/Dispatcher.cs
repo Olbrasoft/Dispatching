@@ -3,33 +3,26 @@ namespace Olbrasoft.Dispatching
     using System.Threading;
     using System.Threading.Tasks;
 
-    /// <summary>
-    /// Default mediator implementation relying on single- and multi instance delegates for resolving handlers.
-    /// </summary>
     public class Dispatcher : IDispatcher
     {
-        protected IExecutorFactory ExecutorFactory { get; }
+        protected ExecutorFactory ExecutorFactory { get; }
 
-        public Dispatcher(IExecutorFactory executorFactory)
+        public Dispatcher(ExecutorFactory executorFactory)
         {
             ExecutorFactory = executorFactory;
         }
 
-        public Task<TResult> DispatchAsync<TResult>(IRequest<TResult> query, CancellationToken token = default)
+        public Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
         {
-            var e = Executor(query);
-
-            return e.ExecuteAsync(query, token);
+            return Executor(request).ExecuteAsync(request, token);
         }
 
-        private IExecutor<TResult> Executor<TResult>(IRequest<TResult> query)
+        private IExecutor<TResponse> Executor<TResponse>(IRequest<TResponse> request)
         {
-            var queryType = query.GetType();
-            var resultType = typeof(TResult);
+            var requestType = request.GetType();
+            var responseType = typeof(TResponse);
 
-            var a = ExecutorFactory.Get<TResult>(typeof(Executor<,>).MakeGenericType(queryType, resultType));
-
-            return a;
+            return ExecutorFactory.CreateExecutor<TResponse>(typeof(Executor<,>).MakeGenericType(requestType, responseType));
         }
     }
 }
