@@ -22,6 +22,6 @@ namespace Olbrasoft.Data.Cqrs
             return await Dispatcher.DispatchAsync(this, token);
         }
 
-        public abstract Task<TResponse> ExecuteAsync();
+        public abstract Task<TResponse> ExecuteAsync(CancellationToken token = default);
     }
 }

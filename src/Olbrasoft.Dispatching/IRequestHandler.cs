@@ -16,6 +16,6 @@ namespace Olbrasoft.Dispatching
         /// <param name="request">The request</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Response from the request</returns>
-        Task<TResponse> HandleAsync(TRequest request, CancellationToken cancellationToken);
+        Task<TResponse> HandleAsync(TRequest request, CancellationToken token);
     }
 }

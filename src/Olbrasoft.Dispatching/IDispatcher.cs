@@ -15,8 +15,6 @@ namespace Olbrasoft.Dispatching
         /// <param name="request">Request object</param>
         /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>A task that represents the send operation. The task result contains the handler response</returns>
-        Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default);
-
-       
+        Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token);
     }
 }
