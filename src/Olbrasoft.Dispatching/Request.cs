@@ -1,27 +1,39 @@
-﻿using Olbrasoft.Dispatching;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Data.Cqrs
+namespace Olbrasoft.Dispatching
 {
-    public abstract class Request<TResponse> : IRequest<TResponse>
+    public class Request<TResponse> : IRequest<TResponse>
     {
-        protected IDispatcher Dispatcher { get; }
+        public RequestHandler<Request<TResponse>, TResponse> Handler { get; }
 
-        protected Request()
+        public IDispatcher Dispatcher { get; }
+
+        public Request(RequestHandler<Request<TResponse>, TResponse> handler)
         {
+            Handler = handler;
         }
 
-        protected Request(IDispatcher dispatcher)
+        public Request(IDispatcher dispatcher)
         {
             Dispatcher = dispatcher;
         }
 
-        protected async Task<TResponse> ExecuteWithDispatcherAsync(CancellationToken token = default)
+        public async Task<TResponse> ExecuteWithDispatcherAsync(CancellationToken token = default)
         {
             return await Dispatcher.DispatchAsync(this, token);
         }
 
-        public abstract Task<TResponse> ExecuteAsync(CancellationToken token = default);
+        public async Task<TResponse> ExecuteWithHandler(CancellationToken token = default)
+        {
+            return await Handler.HandleAsync(this, token);
+        }
+
+        public virtual async Task<TResponse> ExecuteAsync(CancellationToken token = default)
+        {
+            if (Handler != null) return await ExecuteWithHandler(token);
+
+            return await ExecuteWithDispatcherAsync(token);
+        }
     }
 }

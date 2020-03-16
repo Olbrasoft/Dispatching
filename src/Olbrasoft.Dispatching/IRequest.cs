@@ -10,6 +10,4 @@ namespace Olbrasoft.Dispatching
     /// </summary>
     /// <typeparam name="TResponse">Response type</typeparam>
     public interface IRequest<out TResponse> : IRequest { }
-
-    
 }

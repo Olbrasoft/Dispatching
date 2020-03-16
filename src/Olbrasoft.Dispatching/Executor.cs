@@ -12,6 +12,7 @@ namespace Olbrasoft.Dispatching
         {
             _handler = handler;
         }
+
         public Task<TResponse> ExecuteAsync(IRequest<TResponse> query, CancellationToken token = default)
         {
             return _handler.HandleAsync((TRequest)query, token);
