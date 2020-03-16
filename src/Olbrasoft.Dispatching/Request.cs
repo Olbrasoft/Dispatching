@@ -5,11 +5,11 @@ namespace Olbrasoft.Dispatching
 {
     public class Request<TResponse> : IRequest<TResponse>
     {
-        public RequestHandler<Request<TResponse>, TResponse> Handler { get; }
+        public IRequestHandler<Request<TResponse>, TResponse> Handler { get; }
 
         public IDispatcher Dispatcher { get; }
 
-        public Request(RequestHandler<Request<TResponse>, TResponse> handler)
+        public Request(IRequestHandler<Request<TResponse>, TResponse> handler)
         {
             Handler = handler;
         }
