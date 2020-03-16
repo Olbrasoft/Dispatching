@@ -3,9 +3,8 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching
 {
-    public interface IExecutor<TResponse>
+    public interface IExecutor<TResult>
     {
-
-        Task<TResponse> ExecuteAsync(IRequest<TResponse> request, CancellationToken token);
+        Task<TResult> ExecuteAsync(IRequest<TResult> query, CancellationToken token);
     }
 }

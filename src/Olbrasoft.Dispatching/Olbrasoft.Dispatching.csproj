@@ -2,14 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>Send Request return response alternative Mediatr</Description>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
+    <PackageIcon>Dispatching.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <PackageReleaseNotes>Send Request return response alternative Mediatr</PackageReleaseNotes>
+    <PackageTags>Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
+    <Copyright></Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>Olbrasoft</Company>
+    <Authors>Jiří Tůma</Authors>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
-  </ItemGroup>
+    <None Include="..\..\..\..\..\..\Pictures\Olbrasoft\Dispatching.png">
 
-  <ItemGroup>
-    <ProjectReference Include="..\Olbrasoft.Extensions\Olbrasoft.Extensions.csproj" />
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
-
 </Project>

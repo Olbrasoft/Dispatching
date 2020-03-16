@@ -2,19 +2,19 @@
 using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching
+
 {
     public class Executor<TRequest, TResponse> : IExecutor<TResponse> where TRequest : IRequest<TResponse>
     {
-        private readonly IRequestHandler<TRequest, TResponse> _handler;
+        private readonly IRequestHandler<TRequest, TResponse> _queryHandler;
 
-        public Executor(IRequestHandler<TRequest, TResponse> handler)
+        public Executor(IRequestHandler<TRequest, TResponse> queryHandler)
         {
-            _handler = handler;
+            _queryHandler = queryHandler;
         }
-
         public Task<TResponse> ExecuteAsync(IRequest<TResponse> query, CancellationToken token = default)
         {
-            return _handler.HandleAsync((TRequest)query, token);
+            return _queryHandler.HandleAsync((TRequest)query, token);
         }
     }
 }

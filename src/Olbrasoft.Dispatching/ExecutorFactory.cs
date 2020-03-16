@@ -1,23 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 
 namespace Olbrasoft.Dispatching
 {
     public class ExecutorFactory : IExecutorFactory
     {
-        private IServiceProvider _provider;
-        private readonly IServiceScopeFactory _factory;
+        ServiceFactory _factory;
 
-        protected IServiceProvider Provider => _provider ?? (_provider = _factory.CreateScope().ServiceProvider);
-
-        public ExecutorFactory(IServiceScopeFactory factory)
+        public ExecutorFactory(ServiceFactory factory)
         {
             _factory = factory;
         }
 
         public IExecutor<TResult> Get<TResult>(Type executorType)
         {
-            return (IExecutor<TResult>)Provider.GetService(executorType);
+            return (IExecutor<TResult>)_factory.GetInstance(executorType);
         }
     }
 }

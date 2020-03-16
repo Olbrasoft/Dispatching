@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29827.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olbrasoft.Dispatching", "src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj", "{74DB9F92-568F-453A-B8D6-E96E1B8B566A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Extensions", "src\Olbrasoft.Extensions\Olbrasoft.Extensions.csproj", "{D3504DDE-E3CF-40F5-BE38-F8BE2EBE08C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching", "src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj", "{74DB9F92-568F-453A-B8D6-E96E1B8B566A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3504DDE-E3CF-40F5-BE38-F8BE2EBE08C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3504DDE-E3CF-40F5-BE38-F8BE2EBE08C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3504DDE-E3CF-40F5-BE38-F8BE2EBE08C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3504DDE-E3CF-40F5-BE38-F8BE2EBE08C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
