@@ -1,3 +1,6 @@
 version: 1.0.{build}
 build:
   verbosity: minimal
+  artifacts:
+- path: src\Olbrasoft.Dispatching\bin\release\*.nupkg
+  name: NuGet
