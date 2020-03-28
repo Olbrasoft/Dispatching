@@ -15,11 +15,11 @@ dotnet_csproj:
   file_version: '{build}'
   informational_version: '{version}'
 before_build:
-- cmd: dotnet restore Dispatching\src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj
+- cmd: dotnet restore .\Dispatching\Dispatching.sln
 build:
   verbosity: minimal
 after_build:
-- cmd: dotnet pack Dispatching\src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj
+- cmd: dotnet pack .\Dispatching\src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj
 artifacts:
 - path: '**\*.nupkg'
 deploy: off
