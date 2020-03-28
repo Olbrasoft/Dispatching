@@ -15,7 +15,7 @@ dotnet_csproj:
   file_version: '{build}'
   informational_version: '{version}'
 before_build:
-- cmd: dotnet restore Dispatching\Dispatching.sln
+- cmd: dotnet restore dispatching\Dispatching.sln
 build:
   verbosity: minimal
 after_build:
