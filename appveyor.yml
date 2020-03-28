@@ -1,6 +1,25 @@
-version: 1.0.{build}
+image: Visual Studio 2019
+configuration: Release
+platform: Any CPU
+
+skip_commits:
+  files:
+    - '*.md'
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{build}'
+  informational_version: '{version}'
+before_build:
+- cmd: dotnet restore Dispatching\Dispatching.sln
 build:
   verbosity: minimal
-  artifacts:
-- path: src\Olbrasoft.Dispatching\bin\release\*.nupkg
-  name: NuGet
+after_build:
+- cmd: dotnet pack Dispatching\src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj
+artifacts:
+- path: '**\*.nupkg'
+deploy: off
