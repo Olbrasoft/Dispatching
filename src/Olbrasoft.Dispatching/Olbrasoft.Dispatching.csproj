@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
     <Description>Send Request return response alternative Mediatr</Description>
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
     <PackageIcon>Dispatching.png</PackageIcon>
@@ -12,7 +12,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>Olbrasoft</Company>
     <Authors>Jiří Tůma</Authors>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

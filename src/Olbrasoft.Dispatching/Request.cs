@@ -5,35 +5,25 @@ namespace Olbrasoft.Dispatching
 {
     public class Request<TResponse> : IRequest<TResponse>
     {
-        public IRequestHandler<Request<TResponse>, TResponse> Handler { get; }
+        private readonly IRequestHandler<Request<TResponse>, TResponse> _handler;
 
-        public IDispatcher Dispatcher { get; }
+        private readonly IDispatcher _dispatcher;
 
         public Request(IRequestHandler<Request<TResponse>, TResponse> handler)
         {
-            Handler = handler;
+            _handler = handler;
         }
 
         public Request(IDispatcher dispatcher)
         {
-            Dispatcher = dispatcher;
-        }
-
-        public async Task<TResponse> ExecuteWithDispatcherAsync(CancellationToken token = default)
-        {
-            return await Dispatcher.DispatchAsync(this, token);
-        }
-
-        public async Task<TResponse> ExecuteWithHandler(CancellationToken token = default)
-        {
-            return await Handler.HandleAsync(this, token);
+            _dispatcher = dispatcher;
         }
 
         public virtual async Task<TResponse> ExecuteAsync(CancellationToken token = default)
         {
-            if (Handler != null) return await ExecuteWithHandler(token);
+            if (_handler != null) return await _handler.HandleAsync(this, token);
 
-            return await ExecuteWithDispatcherAsync(token);
+            return await _dispatcher.DispatchAsync(this, token);
         }
     }
 }
