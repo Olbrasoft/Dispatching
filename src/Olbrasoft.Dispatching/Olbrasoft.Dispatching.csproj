@@ -12,11 +12,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>Olbrasoft</Company>
     <Authors>Jiří Tůma</Authors>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Pictures\Olbrasoft\Dispatching.png">
+    <None Include="..\..\Dispatching.png">
 
       <Pack>True</Pack>
       <PackagePath></PackagePath>
