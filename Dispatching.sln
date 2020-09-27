@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E0E73104-DE77-4C0E-A07D-5632F89170D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olbrasoft.Dispatching.Tests", "test\Olbrasoft.Dispatching.Tests\Olbrasoft.Dispatching.Tests.csproj", "{D1D64172-15EA-4843-A2A1-63ABE45FA11F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +24,16 @@ Global
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1D64172-15EA-4843-A2A1-63ABE45FA11F} = {E0E73104-DE77-4C0E-A07D-5632F89170D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4E12DD5-EC46-45A1-AAA2-22294CD955EA}

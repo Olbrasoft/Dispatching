@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace Olbrasoft.Dispatching
 {
     /// <summary>
-    /// Defines a mediator to encapsulate request/response and publishing interaction patterns
+    /// Defines a dispatcher to encapsulate request/response and publishing interaction patterns
     /// </summary>
     public interface IDispatcher
     {
