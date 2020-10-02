@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
     <Description>Send Request return response alternative Mediatr</Description>
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
-    <PackageIcon>Dispatching.png</PackageIcon>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
     <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
     <PackageReleaseNotes>Send Request return response alternative Mediatr</PackageReleaseNotes>
     <PackageTags>Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
@@ -12,12 +12,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>Olbrasoft</Company>
     <Authors>Jiří Tůma</Authors>
-    <Version>1.1.4</Version>
+    <Version>1.1.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\Dispatching.png">
-
+    <None Include="..\..\olbrasoft-dispatching.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,5 +25,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj" />
   </ItemGroup>
-
 </Project>
