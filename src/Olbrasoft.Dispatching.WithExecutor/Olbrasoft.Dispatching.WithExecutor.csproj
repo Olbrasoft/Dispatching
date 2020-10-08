@@ -5,12 +5,15 @@
     <Description>Dispatcher implemented using the executor class</Description>
     <Copyright>Copyright @2020 Olbrasoft</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching.WithExecutor</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
     <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
     <PackageTags>Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching.WithExecutor</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <Product>Dispatching</Product>
+    <Company>Olbrasoft</Company>
+    <Authors>Jiří Tůma</Authors>
   </PropertyGroup>
 
   <ItemGroup>
