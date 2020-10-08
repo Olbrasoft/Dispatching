@@ -1,4 +1,6 @@
-﻿namespace Olbrasoft.Dispatching.DependencyInjection.Tests
+﻿using Olbrasoft.Dispatching.Common;
+
+namespace Olbrasoft.Dispatching.DependencyInjection.Tests
 {
     public class AwesomeRequest2 : Request<object>
     {

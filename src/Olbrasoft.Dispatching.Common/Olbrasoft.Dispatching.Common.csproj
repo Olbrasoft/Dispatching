@@ -23,4 +23,8 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Olbrasoft.Dispatching.DependencyInjection\Olbrasoft.Dispatching.DependencyInjection.csproj" />
+  </ItemGroup>
 </Project>

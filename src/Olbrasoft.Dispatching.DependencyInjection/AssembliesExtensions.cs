@@ -1,4 +1,5 @@
-﻿using Olbrasoft.Extensions;
+﻿using Olbrasoft.Dispatching.Common;
+using Olbrasoft.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
