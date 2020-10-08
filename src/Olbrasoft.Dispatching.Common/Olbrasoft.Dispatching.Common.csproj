@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
     <Description>Send Request return response alternative Mediatr</Description>
@@ -22,9 +21,5 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Olbrasoft.Dispatching.DependencyInjection\Olbrasoft.Dispatching.DependencyInjection.csproj" />
   </ItemGroup>
 </Project>
