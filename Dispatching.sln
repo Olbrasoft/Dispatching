@@ -1,18 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29827.131
+VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching", "src\Olbrasoft.Dispatching\Olbrasoft.Dispatching.csproj", "{74DB9F92-568F-453A-B8D6-E96E1B8B566A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{944FD59E-5C95-408C-A692-AED5EE68362A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8DE22CFA-D361-491F-83BF-96F1B4D32D53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.Tests", "test\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.Tests\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.Tests.csproj", "{079B36FD-699F-4479-957B-56FD06CCF4F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft", "src\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.csproj", "{FB89D25C-13A3-4FF4-96EA-E178F260C93E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Benchmarks", "test\Olbrasoft.Dispatching.Benchmarks\Olbrasoft.Dispatching.Benchmarks.csproj", "{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Common", "src\Olbrasoft.Dispatching.Common\Olbrasoft.Dispatching.Common.csproj", "{40EBA729-BFBF-425D-8D8A-0A6AC58889D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Common.Tests", "test\Olbrasoft.Dispatching.Common.Tests\Olbrasoft.Dispatching.Common.Tests.csproj", "{5AA6E521-51B2-4B52-BA7F-12171F495BF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48643814-EB24-485A-9F37-B1703741055D}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E0E73104-DE77-4C0E-A07D-5632F89170D8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olbrasoft.Dispatching.Tests", "test\Olbrasoft.Dispatching.Tests\Olbrasoft.Dispatching.Tests.csproj", "{D1D64172-15EA-4843-A2A1-63ABE45FA11F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,22 +26,36 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74DB9F92-568F-453A-B8D6-E96E1B8B566A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1D64172-15EA-4843-A2A1-63ABE45FA11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079B36FD-699F-4479-957B-56FD06CCF4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079B36FD-699F-4479-957B-56FD06CCF4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079B36FD-699F-4479-957B-56FD06CCF4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079B36FD-699F-4479-957B-56FD06CCF4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB89D25C-13A3-4FF4-96EA-E178F260C93E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{FB89D25C-13A3-4FF4-96EA-E178F260C93E}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{FB89D25C-13A3-4FF4-96EA-E178F260C93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB89D25C-13A3-4FF4-96EA-E178F260C93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40EBA729-BFBF-425D-8D8A-0A6AC58889D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40EBA729-BFBF-425D-8D8A-0A6AC58889D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40EBA729-BFBF-425D-8D8A-0A6AC58889D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40EBA729-BFBF-425D-8D8A-0A6AC58889D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA6E521-51B2-4B52-BA7F-12171F495BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA6E521-51B2-4B52-BA7F-12171F495BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA6E521-51B2-4B52-BA7F-12171F495BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA6E521-51B2-4B52-BA7F-12171F495BF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D1D64172-15EA-4843-A2A1-63ABE45FA11F} = {E0E73104-DE77-4C0E-A07D-5632F89170D8}
+		{079B36FD-699F-4479-957B-56FD06CCF4F0} = {944FD59E-5C95-408C-A692-AED5EE68362A}
+		{54CFCC24-33EC-46B7-9F2F-DB8DC30986F7} = {944FD59E-5C95-408C-A692-AED5EE68362A}
+		{5AA6E521-51B2-4B52-BA7F-12171F495BF4} = {944FD59E-5C95-408C-A692-AED5EE68362A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C4E12DD5-EC46-45A1-AAA2-22294CD955EA}
+		SolutionGuid = {966C9668-6EA7-4CA2-9864-B9FF68226710}
 	EndGlobalSection
 EndGlobal

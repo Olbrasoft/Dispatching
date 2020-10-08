@@ -1,10 +1,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching.Common
 {
     /// <summary>
-    /// Defines a handler
+    ///  Defines a handler for a request
     /// </summary>
     public interface IRequestHandler
     {

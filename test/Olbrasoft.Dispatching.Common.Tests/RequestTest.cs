@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Olbrasoft.Dispatching.Tests
+namespace Olbrasoft.Dispatching.Common
 {
     public class RequestTest
     {

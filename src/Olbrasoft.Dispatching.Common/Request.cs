@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching.Common
 {
     public class Request<TResponse> : IRequest<TResponse>
     {

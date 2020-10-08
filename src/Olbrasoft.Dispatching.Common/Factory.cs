@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching.Common
 {
     /// <summary>
     /// Factory method used to resolve all services. For multiple instances, it will resolve against <see cref="IEnumerable{T}" />
