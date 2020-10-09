@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching.DependencyInjection.Microsoft.Tests
+namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
 {
     public class AwesomeRequestHandler : IRequestHandler<AwesomeRequest, object>
     {

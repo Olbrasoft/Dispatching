@@ -3,15 +3,19 @@ using Olbrasoft.Dispatching.Common;
 using Olbrasoft.Dispatching.DependencyInjection.Microsoft;
 using System.Reflection;
 
-namespace Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.Tests
+namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
 {
     public static class ServiceCollectionExtensions
     {
         public static void AddDispatching(this IServiceCollection services, params Assembly[] assemblies)
         {
-            services.AddFactoryAndRequestHandlers(assemblies);
+            services.AddTransient(typeof(Executor<,>), typeof(Executor<,>));
 
-            services.AddTransient<IDispatcher, DynamicDispatcher>();
+            services.AddTransient<Factory>(p => p.GetService);
+
+            services.AddTransient<IDispatcher, Dispatcher>();
+
+            services.AddRequestsAndRequestHandlers(assemblies);
         }
     }
 }

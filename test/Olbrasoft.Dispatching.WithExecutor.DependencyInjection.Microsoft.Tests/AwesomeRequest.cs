@@ -1,6 +1,6 @@
 ﻿using Olbrasoft.Dispatching.Common;
 
-namespace Olbrasoft.Dispatching.DependencyInjection.Microsoft.Tests
+namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
 {
     public class AwesomeRequest : Request<object>
     {
