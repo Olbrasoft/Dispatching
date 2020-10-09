@@ -11,11 +11,9 @@ namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
         {
             services.AddTransient(typeof(Executor<,>), typeof(Executor<,>));
 
-            services.AddTransient<Factory>(p => p.GetService);
-
             services.AddTransient<IDispatcher, Dispatcher>();
 
-            services.AddRequestsAndRequestHandlers(assemblies);
+            services.AddFactoryAndRequestHandlers(assemblies);
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
             services.AddDispatching(typeof(AwesomeRequest).Assembly);
 
             //Assert
-            Assert.True(services.Count == 5);
+            Assert.True(services.Count == 4);
         }
     }
 }
