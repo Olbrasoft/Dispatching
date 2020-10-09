@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
-    <Product>Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft</Product>
+    <Product>Dispatching</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Registers classes for Dispatching using dynamic dispatcher to the Microsoft container.</Description>
     <Copyright>Copyright @2020 Olbrasoft</Copyright>
@@ -13,6 +13,7 @@
     <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Dispatching Mediatr CQRS Dependency Injection Microsoft</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

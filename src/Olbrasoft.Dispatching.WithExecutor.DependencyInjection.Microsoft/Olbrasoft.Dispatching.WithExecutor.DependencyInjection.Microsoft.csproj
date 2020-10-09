@@ -4,11 +4,16 @@
     <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;</TargetFrameworks>
     <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching.WithExecutor.DependencyInjection.Microsoft</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching.WithExecutor.DependencyInjection.Microsoft</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching/</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
-    <Description>Register classes for Dispatching with Executor to Microsoft DI Container</Description>
-    <Version>1.0.0</Version>
+    <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
+    <Version>1.0.1</Version>
+    <Authors>Jiří Tůma</Authors>
+    <Company>Olbrasoft</Company>
+    <Product>Dispatching</Product>
+    <Copyright>Copyright @2020 Olbrasoft</Copyright>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
