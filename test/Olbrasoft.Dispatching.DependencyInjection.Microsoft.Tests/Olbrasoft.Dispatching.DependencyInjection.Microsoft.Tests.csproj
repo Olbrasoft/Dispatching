@@ -21,6 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft\Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.csproj" />
+    <ProjectReference Include="..\..\src\Olbrasoft.Dispatching.DependencyInjection.Microsoft\Olbrasoft.Dispatching.DependencyInjection.Microsoft.csproj" />
   </ItemGroup>
 </Project>

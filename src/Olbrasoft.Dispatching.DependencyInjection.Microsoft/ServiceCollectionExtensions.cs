@@ -11,12 +11,12 @@ namespace Olbrasoft.Dispatching.DependencyInjection.Microsoft
         {
             foreach (var queryType in assemblies.RequestTypes())
             {
-                services.AddTransient(queryType);
+                services.AddScoped(queryType);
             }
 
             foreach (var typeInfo in assemblies.RequestHandlerTypes())
             {
-                services.AddTransient(typeInfo.GetInterfaces().First(), typeInfo);
+                services.AddScoped(typeInfo.GetInterfaces().First(), typeInfo);
             }
         }
 
@@ -24,14 +24,14 @@ namespace Olbrasoft.Dispatching.DependencyInjection.Microsoft
         {
             foreach (var typeInfo in assemblies.RequestHandlerTypes())
             {
-                services.AddTransient(typeInfo.GetInterfaces().First(), typeInfo);
+                services.AddScoped(typeInfo.GetInterfaces().First(), typeInfo);
             }
         }
 
         public static void AddFactoryAndRequestHandlers(this IServiceCollection services, params Assembly[] assemblies)
         {
             services.AddRequestHandlers(assemblies);
-            services.AddSingleton<Factory>(p => p.GetService);
+            services.AddScoped<Factory>(p => p.GetService);
         }
     }
 }

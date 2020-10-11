@@ -10,7 +10,7 @@
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <Copyright>Copyright ©2020 Olbrasoft</Copyright>
     <Product>Dispatching</Product>
   </PropertyGroup>

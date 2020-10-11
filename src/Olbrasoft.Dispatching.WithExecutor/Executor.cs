@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching.WithExecutor
-
 {
     public class Executor<TRequest, TResponse> : IExecutor<TResponse> where TRequest : IRequest<TResponse>
     {
