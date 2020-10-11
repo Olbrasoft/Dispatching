@@ -11,7 +11,7 @@ namespace Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.Tests
         {
             services.AddFactoryAndRequestHandlers(assemblies);
 
-            services.AddTransient<IDispatcher, DynamicDispatcher>();
+            services.AddScoped<IDispatcher, DynamicDispatcher>();
         }
     }
 }

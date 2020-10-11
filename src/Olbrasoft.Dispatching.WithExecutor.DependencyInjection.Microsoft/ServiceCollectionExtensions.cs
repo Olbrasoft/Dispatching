@@ -9,9 +9,9 @@ namespace Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft
     {
         public static void AddDispatching(this IServiceCollection services, params Assembly[] assemblies)
         {
-            services.AddTransient(typeof(Executor<,>), typeof(Executor<,>));
+            services.AddScoped(typeof(Executor<,>), typeof(Executor<,>));
 
-            services.AddTransient<IDispatcher, Dispatcher>();
+            services.AddScoped<IDispatcher, Dispatcher>();
 
             services.AddFactoryAndRequestHandlers(assemblies);
         }

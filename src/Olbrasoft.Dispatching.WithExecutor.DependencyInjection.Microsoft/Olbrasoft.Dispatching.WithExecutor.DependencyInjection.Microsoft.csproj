@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
     <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
     <Product>Dispatching</Product>
@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
-    <PackageReference Include="Olbrasoft.Dispatching.DependencyInjection.Microsoft" Version="1.1.1" />
+    <PackageReference Include="Olbrasoft.Dispatching.DependencyInjection.Microsoft" Version="1.1.2" />
     <PackageReference Include="Olbrasoft.Dispatching.WithExecutor" Version="1.0.4" />
   </ItemGroup>
 
