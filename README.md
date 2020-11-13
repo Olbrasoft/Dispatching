@@ -7,6 +7,6 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.DependencyInjection.Microsoft  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft  
-Benchmark DispatcherWithExecutor vs DynamicDispatcher vs Mediatr
+Benchmark DispatcherWithExecutor vs DynamicDispatcher vs Mediatr:  
 ![Olbrasoft Dispatching Benchmark](./benchmark.png)
 ![Olbrasoft Dispatching](./olbrasoft-dispatching.png)
