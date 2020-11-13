@@ -1,5 +1,6 @@
 [![AppVeyor build status](https://img.shields.io/appveyor/build/Olbrasoft/dispatching/master.svg)](https://ci.appveyor.com/project/Olbrasoft/dispatching) Dispatching   
   
+  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Common.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Common/) Olbrasoft.Dispatching.Common  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Dynamic.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Dynamic/) Olbrasoft.Dispatching.Dynamic  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor/) Olbrasoft.Dispatching.WithExecutor  
