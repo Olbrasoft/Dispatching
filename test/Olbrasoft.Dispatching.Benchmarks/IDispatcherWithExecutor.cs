@@ -2,7 +2,7 @@
 
 namespace Olbrasoft.Dispatching.Benchmarks
 {
-    public class AwesomeRequest : IRequest<object>, MediatR.IRequest<object>
+    public interface IDispatcherWithExecutor : IDispatcher
     {
     }
 }

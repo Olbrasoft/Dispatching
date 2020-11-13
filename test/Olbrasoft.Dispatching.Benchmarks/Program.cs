@@ -1,12 +1,13 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
 
 namespace Olbrasoft.Dispatching.Benchmarks
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //BenchmarkRunner.Run<DateTimeParserBenchmarks>();
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
         }
     }
 }
