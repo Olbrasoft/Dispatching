@@ -8,5 +8,5 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft  
 
-![Olbrasoft Dispatching Benchmark](./benchmark.png)
+![Olbrasoft Dispatching Benchmark](./benchmark1.png)
 ![Olbrasoft Dispatching](./olbrasoft-dispatching.png)
