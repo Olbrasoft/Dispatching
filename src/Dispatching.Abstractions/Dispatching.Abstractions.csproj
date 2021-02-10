@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <PackageReleaseNotes>Send Request return Response alternative Mediatr.</PackageReleaseNotes>
+    <PackageTags>Mediator Dispatchig Command Query Responsibility Segredation CQS CQRS</PackageTags>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>Olbrasoft</Company>
+    <Authors>Jiří Tůma</Authors>
+    <Version>1.0.2</Version>
+    <Product>Dispatching</Product>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching.Abstractions</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

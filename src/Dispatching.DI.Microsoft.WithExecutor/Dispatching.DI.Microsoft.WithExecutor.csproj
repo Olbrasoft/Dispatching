@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching/</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
+    <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
+    <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
+    <Version>1.0.3</Version>
+    <Authors>Jiří Tůma</Authors>
+    <Company>Olbrasoft</Company>
+    <Product>Dispatching</Product>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyName>Olbrasoft.Dispatching.DI.Microsoft.WithExecutor</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching.DI.Microsoft.WithExecutor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft" Version="1.0.3" />
+    <PackageReference Include="Olbrasoft.Dispatching.WithExecutor" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

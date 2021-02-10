@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <Authors>Jiří Tůma</Authors>
+    <Company>Olbrasoft</Company>
+    <Description>An extension to find classes that implement the IRequest &lt;&gt; IRequestHandler &lt;,&gt; interface</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Dispatching Dependency Injection</PackageTags>
+    <Version>1.1.1</Version>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <Product>Dispatching</Product>
+    <AssemblyName>Olbrasoft.Dispatching.DI.Common</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching.DI.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.0.2" />
+    <PackageReference Include="Olbrasoft.Extensions" Version="1.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

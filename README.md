@@ -1,13 +1,12 @@
 [![AppVeyor build status](https://img.shields.io/appveyor/build/Olbrasoft/dispatching/master.svg)](https://ci.appveyor.com/project/Olbrasoft/dispatching) Dispatching   
   
   
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Common.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Common/) Olbrasoft.Dispatching.Common  
+[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Abstractions.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Abstractions/) Olbrasoft.Dispatching.Abstractions  
 [![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Dynamic.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Dynamic/) Olbrasoft.Dispatching.Dynamic  
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor/) Olbrasoft.Dispatching.WithExecutor  
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DependencyInjection.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DependencyInjection/) Olbrasoft.Dispatching.DependencyInjection  
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.DependencyInjection.Microsoft  
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.Dynamic.DependencyInjection.Microsoft  
-[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft/) Olbrasoft.Dispatching.WithExecutor.DependencyInjection.Microsoft  
+[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.WithExecutor.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.WithExecutor/) Olbrasoft.Dispatching.DI.Common  
+[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DI.Microsoft.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DI.Microsoft/) Olbrasoft.Dispatching.DI.Microsoft  
+[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DI.Microsoft.Dynamic.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DI.Microsoft.Dynamic/) Olbrasoft.Dispatching.DI.Microsoft.Dynamic  
+[![NuGet](https://img.shields.io/nuget/vpre/Olbrasoft.Dispatching.DI.Microsoft.WithExecutor.svg)](https://www.nuget.org/packages/Olbrasoft.Dispatching.DI.Microsoft.WithExecutor/) Olbrasoft.Dispatching.DI.Microsoft.WithExecutor  
   
 Benchmark DispatcherWithExecutor vs DynamicDispatcher vs Mediatr:  
 ![Olbrasoft Dispatching Benchmark](./benchmark.png)
