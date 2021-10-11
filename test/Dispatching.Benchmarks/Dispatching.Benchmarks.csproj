@@ -8,12 +8,12 @@
     <RootNamespace>Olbrasoft.Dispatching.Benchmarks</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
-    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.0.2" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft" Version="1.0.3" />
-    <PackageReference Include="Olbrasoft.Dispatching.Dynamic" Version="1.0.4" />
-    <PackageReference Include="Olbrasoft.Dispatching.WithExecutor" Version="1.0.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Olbrasoft.Dispatching" Version="1.2.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft" Version="1.2.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.Dynamic" Version="1.2.0" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Olbrasoft.Dispatching.Abstractions;
 
-namespace Olbrasoft.Dispatching.Dynamic
+namespace Dispatching.Dynamic.Tests
 {
     public class AwesomeRequestHandler : IRequestHandler<AwesomeRequest, AwesomeResponse>
     {

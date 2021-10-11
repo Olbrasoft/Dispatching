@@ -1,9 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Olbrasoft.Dispatching.DI.Common</RootNamespace>
+
+    <AssemblyName>Olbrasoft.Dispatching.DI.Common.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,5 +21,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Dispatching.DI.Common\Dispatching.DI.Common.csproj" />
   </ItemGroup>
-
 </Project>

@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Olbrasoft.Dispatching.DI.Microsoft</RootNamespace>
+
+    <AssemblyName>Olbrasoft.Dispatching.DI.Microsoft.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

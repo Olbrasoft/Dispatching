@@ -1,43 +1,27 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching;
-using Olbrasoft.Extensions.Reflection;
-using System.Linq;
+﻿using System;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using Olbrasoft.Dispatching.Abstractions;
+using Olbrasoft.Dispatching.DI.Microsoft.Common;
 
-namespace Olbrasoft.Extensions.DependencyInjection
+namespace Olbrasoft.Dispatching.DI.Microsoft
 {
     public static class ServiceCollectionExtensions
+
     {
-        public static IServiceCollection AddRequestsAndRequestHandlers(this IServiceCollection services, params Assembly[] assemblies)
+        public static IServiceCollection AddDispatching(this IServiceCollection services, params Assembly[] assemblies)
         {
-            foreach (var queryType in assemblies.RequestTypes())
-            {
-                services.AddScoped(queryType);
-            }
+            if (services is null)
+                throw new ArgumentNullException(nameof(services));
 
-            foreach (var typeInfo in assemblies.RequestHandlerTypes())
-            {
-                services.AddScoped(typeInfo.GetInterfaces().First(), typeInfo);
-            }
+            if (assemblies is null)
+                throw new ArgumentNullException(nameof(assemblies));
 
-            return services;
-        }
+            services.AddScoped(typeof(Executor<,>), typeof(Executor<,>));
 
-        public static IServiceCollection AddRequestHandlers(this IServiceCollection services, params Assembly[] assemblies)
-        {
-            foreach (var typeInfo in assemblies.RequestHandlerTypes())
-            {
-                services.AddScoped(typeInfo.GetInterfaces().First(), typeInfo);
-            }
+            services.AddScoped<IDispatcher, Dispatcher>();
 
-            return services;
-        }
-
-        public static IServiceCollection AddFactoryAndRequestHandlers(this IServiceCollection services, params Assembly[] assemblies)
-        {
-            services.AddRequestHandlers(assemblies);
-
-            return services.AddScoped<Factory>(p => p.GetService);
+            return services.AddFactoryAndRequestHandlers(assemblies);
         }
     }
 }

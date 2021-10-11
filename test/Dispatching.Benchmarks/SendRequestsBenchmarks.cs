@@ -2,8 +2,9 @@
 using BenchmarkDotNet.Order;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching.WithExecutor;
-using Olbrasoft.Extensions.DependencyInjection;
+using Olbrasoft.Dispatching.Abstractions;
+using Olbrasoft.Dispatching.DI.Microsoft.Common;
+using Olbrasoft.Dispatching.Dynamic;
 using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching.Benchmarks

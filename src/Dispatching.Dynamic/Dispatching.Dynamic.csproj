@@ -13,9 +13,9 @@
     <Company>Olbrasoft</Company>
     <Product>Dispatching</Product>
     <Copyright>Copyright ©2021 Olbrasoft</Copyright>
-    <Version>1.0.4</Version>
+    <Version>1.2.0</Version>
     <AssemblyName>Olbrasoft.Dispatching.Dynamic</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+    <RootNamespace>Olbrasoft.Dispatching.Dynamic</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\olbrasoft-dispatching.png">
@@ -26,6 +26,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.0.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.1.1" />
   </ItemGroup>
 </Project>

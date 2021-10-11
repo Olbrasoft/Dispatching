@@ -1,4 +1,6 @@
-﻿namespace Olbrasoft.Dispatching.DependencyInjection.Microsoft.Tests
+﻿using Olbrasoft.Dispatching.Abstractions;
+
+namespace Olbrasoft.Dispatching.DI.Microsoft
 {
     public class AwesomeRequest : Request<object>
     {

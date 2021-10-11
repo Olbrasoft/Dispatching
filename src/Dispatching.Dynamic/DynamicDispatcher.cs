@@ -1,23 +1,25 @@
-﻿using Olbrasoft.Extensions.Dispatching;
+﻿using Olbrasoft.Dispatching.Abstractions;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching.Dynamic
 {
-    public class DynamicDispatcher : IDispatcher
+    public class DynamicDispatcher : DispatcherBase
     {
-        private readonly Factory _factory;
-
-        public DynamicDispatcher(Factory factory)
+        public DynamicDispatcher(Factory factory) : base(factory)
         {
-            _factory = factory;
         }
 
-        public Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
+        public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
         {
-            var handlerType = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
+            if (request is null)
+                throw new ArgumentNullException(nameof(request));
 
-            dynamic handler = _factory.CreateHandler(handlerType);
+            var handlerType = typeof(IRequestHandler<,>)
+                .MakeGenericType(request.GetType(), typeof(TResponse));
+
+            dynamic handler = GetHandler<IHandler>(handlerType);
 
             return handler.HandleAsync((dynamic)request, token);
         }

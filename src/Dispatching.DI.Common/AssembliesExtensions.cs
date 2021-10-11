@@ -1,9 +1,11 @@
-﻿using Olbrasoft.Dispatching;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Olbrasoft.Dispatching.Abstractions;
+using Olbrasoft.Extensions;
 
-namespace Olbrasoft.Extensions.Reflection
+namespace Olbrasoft.Dispatching.DI.Common
 {
     public static class AssembliesExtensions
     {
@@ -15,6 +17,9 @@ namespace Olbrasoft.Extensions.Reflection
 
         public static IEnumerable<TypeInfo> RequestTypes(this IEnumerable<Assembly> assemblies)
         {
+            if (assemblies is null)
+                throw new ArgumentNullException(nameof(assemblies));
+
             var requestGenericInterfaceType = new[] { typeof(IRequest<>) };
 
             return requestGenericInterfaceType.SelectMany(openType => AllTypes(assemblies)
@@ -23,6 +28,9 @@ namespace Olbrasoft.Extensions.Reflection
 
         public static IEnumerable<TypeInfo> RequestHandlerTypes(this IEnumerable<Assembly> assemblies)
         {
+            if (assemblies is null)
+                throw new ArgumentNullException(nameof(assemblies));
+
             var handlerGenericInterfaceType = new[] { typeof(IRequestHandler<,>) };
 
             return handlerGenericInterfaceType.SelectMany(openType => AllTypes(assemblies)

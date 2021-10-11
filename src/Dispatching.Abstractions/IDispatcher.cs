@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching.Abstractions
 {
     /// <summary>
     /// Defines a dispatcher to encapsulate request/response and publishing interaction patterns

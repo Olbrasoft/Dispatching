@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <AssemblyName>Olbrasoft.Dispatching</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Product>Dispatching</Product>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <PackageLicenseExpression />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <PackageIconUrl />
+    <Version>1.2.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.1.1" />
+  </ItemGroup>
+</Project>

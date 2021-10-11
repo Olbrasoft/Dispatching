@@ -1,4 +1,6 @@
-﻿namespace Olbrasoft.Dispatching.Dynamic
+﻿using Olbrasoft.Dispatching.Abstractions;
+
+namespace Dispatching.Dynamic.Tests
 {
     public class AwesomeRequest : Request<AwesomeResponse>
     {
