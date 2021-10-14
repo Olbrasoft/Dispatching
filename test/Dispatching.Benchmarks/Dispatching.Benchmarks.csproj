@@ -1,5 +1,4 @@
-
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,11 +8,16 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+    <PackageReference Include="Grace.AspNetCore.MVC" Version="7.1.0" />
+    <PackageReference Include="LightInject" Version="6.4.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
     <PackageReference Include="Olbrasoft.Dispatching" Version="1.2.0" />
     <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.1.1" />
     <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft" Version="1.2.0" />
     <PackageReference Include="Olbrasoft.Dispatching.Dynamic" Version="1.2.0" />
+    <PackageReference Include="SimpleInjector" Version="5.3.2" />
+    <PackageReference Include="Singularity" Version="0.18.0" />
+    <PackageReference Include="Singularity.Microsoft.DependencyInjection" Version="0.18.0" />
   </ItemGroup>
 </Project>

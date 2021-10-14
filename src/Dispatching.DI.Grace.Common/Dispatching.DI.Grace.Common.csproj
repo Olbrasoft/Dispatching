@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Registration of Dispatching classes in a container from Grace.</Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
+    <Authors>Jiří Tůma</Authors>
+    <Company>Olbrasoft</Company>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <AssemblyName>Olbrasoft.Dispatching.DI.Grace.Common</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching.DI.Grace.Common</RootNamespace>
+    <Version>1.0.0</Version>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grace" Version="7.2.1" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

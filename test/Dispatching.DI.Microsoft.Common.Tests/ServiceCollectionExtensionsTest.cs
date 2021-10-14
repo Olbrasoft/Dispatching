@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Extensions;
 using Xunit;
 using static Xunit.Assert;
@@ -49,6 +50,21 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
 
             //Assert
             True(services.Count() == 2);
+        }
+
+        [Fact]
+        public void Microsoft_DI_Container_Default_No_Registered_Function_Corresponded_Factory()
+        {
+            //Arrange
+            var services = CreateServices();
+
+            //Act
+            //services.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly);
+            var serviceProvider = services.BuildServiceProvider();
+            var factory = serviceProvider.GetService(typeof(Factory));
+
+            //Assert
+            Assert.True(factory is null);
         }
 
         private static IServiceCollection CreateServices()
