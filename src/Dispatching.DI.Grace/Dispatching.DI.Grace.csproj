@@ -14,11 +14,16 @@
     <Copyright>Copyright @2021 Olbrasoft</Copyright>
     <AssemblyName>Olbrasoft.Dispatching.DI.Grace</AssemblyName>
     <RootNamespace>Olbrasoft.Dispatching.DI.Grace</RootNamespace>
+    <PackageIconUrl />
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Olbrasoft.Dispatching" Version="1.2.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dispatching.DI.Grace.Common\Dispatching.DI.Grace.Common.csproj" />
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

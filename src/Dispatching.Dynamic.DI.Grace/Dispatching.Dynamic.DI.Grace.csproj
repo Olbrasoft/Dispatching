@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <nullable>enable</nullable>
+    <Authors>Jiří Tůma</Authors>
+    <Company>Olbrasoft</Company>
+    <Product>Dispatching</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Registers classes for Dispatching using dynamic dispatcher to the Grace container.</Description>
+    <Copyright>Copyright @2021 Olbrasoft</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Dispatching Mediatr CQRS Dependency Injection Grace</PackageTags>
+    <Version>1.0.0</Version>
+    <AssemblyName>Olbrasoft.Dispatching.Dynamic.DI.Grace</AssemblyName>
+    <RootNamespace>Olbrasoft.Dispatching.Dynamic.DI.Grace</RootNamespace>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.0.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.Dynamic" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\olbrasoft-dispatching.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

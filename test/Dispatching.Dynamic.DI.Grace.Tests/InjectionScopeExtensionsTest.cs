@@ -4,12 +4,12 @@ using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Extensions;
 using Xunit;
 
-namespace Olbrasoft.Dispatching.DI.Grace
+namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
 {
     public class InjectionScopeExtensionsTest
     {
         [Fact]
-        public void IsAbstract()
+        public void Is_Static_Class()
         {
             //Arrange
             var type = typeof(InjectionScopeExtensions);
@@ -65,21 +65,6 @@ namespace Olbrasoft.Dispatching.DI.Grace
         }
 
         [Fact]
-        public void AddDispatching_Registered_Executor()
-        {
-            //Arrange
-            var type = typeof(Executor<,>);
-            IInjectionScope scope = CreateScope();
-
-            //Act
-            scope.AddDispatching(typeof(AwesomeRequest).Assembly);
-            var executor = scope.Locate(typeof(Executor<AwesomeRequest, object>));
-
-            //Assert
-            Assert.True(!(executor is null));
-        }
-
-        [Fact]
         public void AddDispatching_Registered_Dispatcher()
         {
             //Arrange
@@ -90,7 +75,7 @@ namespace Olbrasoft.Dispatching.DI.Grace
             var dispatcher = scope.Locate<IDispatcher>();
 
             //Assert
-            Assert.IsAssignableFrom<Dispatcher>(dispatcher);
+            Assert.IsAssignableFrom<DynamicDispatcher>(dispatcher);
         }
 
         [Fact]
