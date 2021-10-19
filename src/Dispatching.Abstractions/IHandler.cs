@@ -1,4 +1,4 @@
-namespace Olbrasoft.Dispatching.Abstractions
+namespace Olbrasoft.Dispatching
 {
     /// <summary>
     ///  Defines a handler for a request

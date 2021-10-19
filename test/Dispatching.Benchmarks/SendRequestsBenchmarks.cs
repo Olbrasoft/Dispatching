@@ -109,7 +109,11 @@ namespace Olbrasoft.Dispatching.Benchmarks
                 c.ExportFunc<Factory>(p => p.GetService);
             });
 
+            var fac = _graceContainer.Locate<Factory>();
+
             var graceFactory = _graceContainer.Locate<Factory>();
+            if (graceFactory == null) throw new ArgumentNullException();
+
             _graceDispatcher = new Dispatcher(graceFactory);
             _graceDynamicDispatcher = new DynamicDispatcher(graceFactory);
 
@@ -139,31 +143,31 @@ namespace Olbrasoft.Dispatching.Benchmarks
             _mediator = provider.GetService<IMediator>();
         }
 
-        [Benchmark]
-        public async Task DispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task DispatcherWithExecutorDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _dispatcherWithExecutor.DispatchAsync(request, default);
-        }
+        //    var response = await _dispatcherWithExecutor.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task SimpleDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task SimpleDispatcherWithExecutorDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _simpleDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _simpleDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task SimpleDynamicDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task SimpleDynamicDispatcherWithExecutorDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         public async Task GraceDispatcherWithExecutorDispatchAsync()
         {
             var request = new AwesomeRequest();
@@ -171,7 +175,7 @@ namespace Olbrasoft.Dispatching.Benchmarks
             var response = await _graceDispatcher.DispatchAsync(request, default);
         }
 
-        [Benchmark(Baseline = true)]
+        [Benchmark]
         public async Task GraceDynamicDispatcherDispatchAsync()
         {
             var request = new AwesomeRequest();
@@ -179,52 +183,52 @@ namespace Olbrasoft.Dispatching.Benchmarks
             var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
         }
 
-        [Benchmark]
-        public async Task LightInjectDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task LightInjectDispatcherWithExecutorDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _lightInjectDispatcherWithExecutor.DispatchAsync(request, default);
-        }
+        //    var response = await _lightInjectDispatcherWithExecutor.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task SingularityDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task SingularityDispatcherDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _singularityDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _singularityDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task SingularityDynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task SingularityDynamicDispatcherDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task DynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task DynamicDispatcherDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _dynamicDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _dynamicDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task MediatrSendAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task MediatrSendAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _mediator.Send(request, default);
-        }
+        //    var response = await _mediator.Send(request, default);
+        //}
 
-        [Benchmark]
-        public async Task LightInjectDispatcherDynamicDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task LightInjectDispatcherDynamicDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _LightInjectDispatcherDynamic.DispatchAsync(request, default);
-        }
+        //    var response = await _LightInjectDispatcherDynamic.DispatchAsync(request, default);
+        //}
     }
 }

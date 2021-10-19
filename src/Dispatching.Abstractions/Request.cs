@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching.Abstractions
+namespace Olbrasoft.Dispatching
 {
     public class Request<TResponse> : IRequest<TResponse>
     {

@@ -1,6 +1,4 @@
-﻿using Olbrasoft.Dispatching.Abstractions;
-
-namespace Olbrasoft.Dispatching.DI.Grace.Common
+﻿namespace Olbrasoft.Dispatching.DI.Grace.Common
 {
     public class AwesomeRequest : Request<object>
     {

@@ -3,18 +3,22 @@ using Olbrasoft.Dispatching.DI.Common;
 using System;
 using System.Linq;
 using System.Reflection;
+using Grace.DependencyInjection.Extensions;
+using Olbrasoft.Dispatching.Abstractions;
 
 namespace Olbrasoft.Dispatching.DI.Grace.Common
 {
     public static class InjectionScopeExtensions
     {
-        public static IInjectionScope AddRequestHandlers(this IInjectionScope scope, params Assembly[] assemblies)
+        public static IInjectionScope AddFactoryAndRequestHandlers(this IInjectionScope scope, params Assembly[] assemblies)
         {
             if (scope is null)
                 throw new ArgumentNullException(nameof(scope));
 
             if (assemblies is null)
                 throw new ArgumentNullException(nameof(assemblies));
+
+            scope.Configure(block => block.ExportFunc<Factory>(p => p.GetService));
 
             foreach (var typeInfo in assemblies.RequestHandlerTypes())
             {

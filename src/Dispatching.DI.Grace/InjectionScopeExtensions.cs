@@ -20,7 +20,7 @@ namespace Olbrasoft.Dispatching.DI.Grace
 
             scope.Configure(block => block.Export<Dispatcher>().As<IDispatcher>());
 
-            return scope.AddRequestHandlers(assemblies);
+            return scope.AddFactoryAndRequestHandlers(assemblies);
         }
     }
 }

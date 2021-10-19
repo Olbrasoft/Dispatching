@@ -15,10 +15,11 @@
     <AssemblyName>Olbrasoft.Dispatching.DI.Grace</AssemblyName>
     <RootNamespace>Olbrasoft.Dispatching.DI.Grace</RootNamespace>
     <PackageIconUrl />
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Olbrasoft.Dispatching" Version="1.2.0" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.0.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\olbrasoft-dispatching.png">

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Reflection;
-using Grace.DependencyInjection;
+﻿using Grace.DependencyInjection;
 using Olbrasoft.Dispatching.Abstractions;
+using System;
+using System.Reflection;
 using Olbrasoft.Dispatching.DI.Grace.Common;
 
 namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
@@ -16,9 +16,9 @@ namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
             if (assemblies is null)
                 throw new ArgumentNullException(nameof(assemblies));
 
-            scope.Configure(block => block.Export<DynamicDispatcher>().As<IDispatcher>());
+            scope.Configure(block => block.Export<DynamicDispatcher>().As<IDispatcher>().Lifestyle.SingletonPerRequest());
 
-            return scope.AddRequestHandlers(assemblies);
+            return scope.AddFactoryAndRequestHandlers(assemblies);
         }
     }
 }

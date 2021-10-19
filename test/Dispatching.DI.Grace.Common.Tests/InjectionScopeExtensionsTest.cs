@@ -1,5 +1,4 @@
 using Grace.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Extensions;
 using System;
 using Xunit;
@@ -37,68 +36,68 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
             Assert.IsAssignableFrom<Factory>(factory);
         }
 
-        //[Fact]
-        //public void AddFactoryAndRequestHandlers_Returns_IInjectionScope()
-        //{
-        //    //Arrange
-        //    var container = CreateContainer();
+        [Fact]
+        public void AddFactoryAndRequestHandlers_Returns_IInjectionScope()
+        {
+            //Arrange
+            var container = CreateContainer();
 
-        //    //Act
-        //    var result = container.AddFactoryAndRequestHandlers();
+            //Act
+            var result = container.AddFactoryAndRequestHandlers();
 
-        //    //Assert
-        //    Assert.IsAssignableFrom<IInjectionScope>(result);
-        //}
+            //Assert
+            Assert.IsAssignableFrom<IInjectionScope>(result);
+        }
 
-        //[Fact]
-        //public void AddFactoryAndRequestHandlers_Throw_ArgumentNullException_When_Scope_Is_Null()
-        //{
-        //    //Arrange
-        //    IInjectionScope scope = null;
+        [Fact]
+        public void AddFactoryAndRequestHandlers_Throw_ArgumentNullException_When_Scope_Is_Null()
+        {
+            //Arrange
+            IInjectionScope scope = null;
 
-        //    //Act
-        //    // ReSharper disable once AssignNullToNotNullAttribute
-        //    var ex = Assert.Throws<ArgumentNullException>(() => scope.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly));
+            //Act
+            // ReSharper disable once AssignNullToNotNullAttribute
+            var ex = Assert.Throws<ArgumentNullException>(() => scope.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly));
 
-        //    //Assert
-        //    Assert.True(ex.Message is "Value cannot be null. (Parameter 'scope')");
-        //}
+            //Assert
+            Assert.True(ex.Message is "Value cannot be null. (Parameter 'scope')");
+        }
 
-        //[Fact]
-        //public void AddFactoryAndRequestHandlers_Throw_ArgumentNullException_When_Assemblies_Is_Null()
-        //{
-        //    //Arrange
-        //    var container = CreateContainer();
+        [Fact]
+        public void AddFactoryAndRequestHandlers_Throw_ArgumentNullException_When_Assemblies_Is_Null()
+        {
+            //Arrange
+            var container = CreateContainer();
 
-        //    //Act
-        //    // ReSharper disable once AssignNullToNotNullAttribute
-        //    var ex = Assert.Throws<ArgumentNullException>(() => container.AddFactoryAndRequestHandlers(null));
+            //Act
+            // ReSharper disable once AssignNullToNotNullAttribute
+            var ex = Assert.Throws<ArgumentNullException>(() => container.AddFactoryAndRequestHandlers(null));
 
-        //    //Assert
-        //    Assert.True(ex.Message is "Value cannot be null. (Parameter 'assemblies')");
-        //}
+            //Assert
+            Assert.True(ex.Message is "Value cannot be null. (Parameter 'assemblies')");
+        }
 
-        //[Fact]
-        //public void AddFactoryRequestHandlers_Adds_One_Request()
-        //{
-        //}
+        [Fact]
+        public void AddFactoryRequestHandlers_Adds_One_Request()
+        {
+        }
 
-        //[Fact]
-        //public void AddFactoryRequestHandlers_Adds_One_Factory()
-        //{
-        //    //Arrange
-        //    var container = CreateContainer();
+        [Fact]
+        public void AddFactoryRequestHandlers_Adds_One_Factory()
+        {
+            //Arrange
+            var container = CreateContainer();
 
-        //    //Act
-        //    container.AddFactoryAndRequestHandlers(typeof(AwesomeRequest).Assembly);
+            //Act
+            container.AddFactoryAndRequestHandlers(typeof(AwesomeRequest).Assembly);
 
-        //    //Assert
-        //    Assert.True(container.TryLocate(typeof(IRequestHandler<AwesomeRequest, object>), out var handler));
-        //    //Assert
-        //    Assert.True(container.TryLocate(typeof(Factory), out var factory));
+            //Assert
+            Assert.True(container.TryLocate(typeof(IRequestHandler<AwesomeRequest, object>), out var handler));
+            //Assert
+            Assert.True(container.TryLocate(typeof(Factory), out var factory));
 
-        //    Assert.IsAssignableFrom<Factory>(factory);
-        //}
+            Assert.IsAssignableFrom<Factory>(factory);
+        }
 
         private DependencyInjectionContainer CreateContainer()
         {
@@ -113,7 +112,7 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
             var container = CreateContainer();
 
             //Act
-            var result = container.AddRequestHandlers();
+            var result = container.AddFactoryAndRequestHandlers();
 
             //Assert
             Assert.IsAssignableFrom(type, result);
@@ -126,7 +125,7 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
             var container = CreateContainer();
 
             //Act
-            container.AddRequestHandlers(typeof(AwesomeRequest).Assembly);
+            container.AddFactoryAndRequestHandlers(typeof(AwesomeRequest).Assembly);
             container.TryLocate(typeof(IRequestHandler<AwesomeRequest, object>), out var handler);
 
             //Assert
@@ -141,7 +140,7 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
 
             //Act
             // ReSharper disable once AssignNullToNotNullAttribute
-            var ex = Assert.Throws<ArgumentNullException>(() => container.AddRequestHandlers(null));
+            var ex = Assert.Throws<ArgumentNullException>(() => container.AddFactoryAndRequestHandlers(null));
 
             //Assert
             Assert.True(ex.Message is "Value cannot be null. (Parameter 'assemblies')");
@@ -155,7 +154,7 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
 
             //Act
             // ReSharper disable once AssignNullToNotNullAttribute
-            var ex = Assert.Throws<ArgumentNullException>(() => scope.AddRequestHandlers(typeof(AwesomeRequestHandler).Assembly));
+            var ex = Assert.Throws<ArgumentNullException>(() => scope.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly));
 
             //Assert
             Assert.True(ex.Message is "Value cannot be null. (Parameter 'scope')");

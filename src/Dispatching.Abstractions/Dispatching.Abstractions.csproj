@@ -17,7 +17,7 @@
     <Product>Dispatching</Product>
     <RepositoryType>git</RepositoryType>
     <AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching.Abstractions</RootNamespace>
+    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

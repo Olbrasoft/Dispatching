@@ -1,4 +1,4 @@
-namespace Olbrasoft.Dispatching.Abstractions
+namespace Olbrasoft.Dispatching
 {
     /// <summary>
     /// Marker interface to represent a request with a response
