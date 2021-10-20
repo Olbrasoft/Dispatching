@@ -1,10 +1,10 @@
-﻿using Grace.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
-using System;
+﻿using System;
 using System.Reflection;
+using Grace.DependencyInjection;
+using Olbrasoft.Dispatching;
 using Olbrasoft.Dispatching.DI.Grace.Common;
 
-namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
+namespace Olbrasoft.Extensions.DependencyInjection
 {
     public static class InjectionScopeExtensions
     {

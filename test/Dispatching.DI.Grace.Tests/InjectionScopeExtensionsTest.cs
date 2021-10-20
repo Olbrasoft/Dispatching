@@ -1,7 +1,7 @@
-using System;
 using Grace.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Extensions;
+using Olbrasoft.Extensions.DependencyInjection;
+using System;
 using Xunit;
 
 namespace Olbrasoft.Dispatching.DI.Grace
@@ -12,6 +12,7 @@ namespace Olbrasoft.Dispatching.DI.Grace
         public void IsAbstract()
         {
             //Arrange
+
             var type = typeof(InjectionScopeExtensions);
 
             //Act

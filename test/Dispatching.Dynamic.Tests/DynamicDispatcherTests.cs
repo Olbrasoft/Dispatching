@@ -1,7 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using Olbrasoft.Dispatching.Abstractions;
-using Olbrasoft.Dispatching.Dynamic;
+using Olbrasoft.Dispatching;
 using System;
 using System.Linq;
 using Xunit;

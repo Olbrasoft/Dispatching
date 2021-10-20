@@ -9,14 +9,14 @@
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
     <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
-    <Version>1.2.0</Version>
+    <Version>1.3.1</Version>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
     <Product>Dispatching</Product>
     <Copyright>Copyright @2021 Olbrasoft</Copyright>
     <RepositoryType>git</RepositoryType>
     <AssemblyName>Olbrasoft.Dispatching.DI.Microsoft</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching.DI.Microsoft</RootNamespace>
+    <RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\olbrasoft-dispatching.png">

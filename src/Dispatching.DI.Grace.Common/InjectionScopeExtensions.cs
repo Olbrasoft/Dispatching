@@ -1,10 +1,9 @@
-﻿using Grace.DependencyInjection;
-using Olbrasoft.Dispatching.DI.Common;
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
+using Grace.DependencyInjection;
 using Grace.DependencyInjection.Extensions;
-using Olbrasoft.Dispatching.Abstractions;
+using Olbrasoft.Extensions.Reflection;
 
 namespace Olbrasoft.Dispatching.DI.Grace.Common
 {

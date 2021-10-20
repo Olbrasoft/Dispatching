@@ -1,9 +1,8 @@
-﻿using Olbrasoft.Dispatching.Abstractions;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Olbrasoft.Dispatching.Dynamic
+namespace Olbrasoft.Dispatching
 {
     public class DynamicDispatcher : DispatcherBase
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Olbrasoft.Extensions;
+using Olbrasoft.Extensions.Reflection;
 using Xunit;
 
 namespace Olbrasoft.Dispatching.DI.Common

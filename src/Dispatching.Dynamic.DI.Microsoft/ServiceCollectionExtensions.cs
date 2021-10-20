@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
-using Olbrasoft.Dispatching.DI.Microsoft.Common;
-using System;
+﻿using System;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using Olbrasoft.Dispatching;
+using Olbrasoft.Dispatching.DI.Microsoft.Common;
 
-namespace Olbrasoft.Dispatching.Dynamic.DI.Microsoft
+namespace Olbrasoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {

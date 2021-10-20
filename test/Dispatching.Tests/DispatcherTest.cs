@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Moq;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Moq;
-using Olbrasoft.Dispatching.Abstractions;
 using Xunit;
 
 namespace Olbrasoft.Dispatching

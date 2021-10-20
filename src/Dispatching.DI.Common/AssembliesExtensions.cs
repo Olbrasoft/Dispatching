@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Olbrasoft.Dispatching.Abstractions;
-using Olbrasoft.Extensions;
+using Olbrasoft.Dispatching;
 
-namespace Olbrasoft.Dispatching.DI.Common
+namespace Olbrasoft.Extensions.Reflection
 {
     public static class AssembliesExtensions
     {

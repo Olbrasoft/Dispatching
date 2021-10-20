@@ -2,8 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
-using Olbrasoft.Dispatching.DI.Common;
+using Olbrasoft.Extensions.Reflection;
 
 namespace Olbrasoft.Dispatching.DI.Microsoft.Common
 {

@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Olbrasoft.Extensions;
+using Olbrasoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Olbrasoft.Dispatching.DI.Microsoft

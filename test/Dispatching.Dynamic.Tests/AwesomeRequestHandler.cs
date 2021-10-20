@@ -1,6 +1,6 @@
-﻿using System.Threading;
+﻿using Olbrasoft.Dispatching;
+using System.Threading;
 using System.Threading.Tasks;
-using Olbrasoft.Dispatching.Abstractions;
 
 namespace Dispatching.Dynamic.Tests
 {

@@ -1,7 +1,7 @@
-using System;
 using Grace.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Extensions;
+using System;
+using Olbrasoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Olbrasoft.Dispatching.Dynamic.DI.Grace

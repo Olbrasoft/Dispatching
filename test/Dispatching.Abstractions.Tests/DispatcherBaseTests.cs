@@ -1,6 +1,5 @@
-﻿using System;
-using Castle.DynamicProxy.Tokens;
-using Moq;
+﻿using Moq;
+using System;
 using Xunit;
 
 namespace Olbrasoft.Dispatching.Abstractions

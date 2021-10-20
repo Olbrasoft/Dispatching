@@ -13,15 +13,15 @@
     <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Dispatching Dependency Injection</PackageTags>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Copyright>Copyright @2021 Olbrasoft</Copyright>
     <Product>Dispatching</Product>
     <AssemblyName>Olbrasoft.Dispatching.DI.Common</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching.DI.Common</RootNamespace>
+    <RootNamespace>Olbrasoft.Extensions.Reflection</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.3.0" />
     <PackageReference Include="Olbrasoft.Extensions" Version="1.0.5" />
   </ItemGroup>
 

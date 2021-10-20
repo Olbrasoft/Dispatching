@@ -1,4 +1,4 @@
-﻿using Olbrasoft.Dispatching.Abstractions;
+﻿using Olbrasoft.Dispatching;
 
 namespace Dispatching.Dynamic.Tests
 {

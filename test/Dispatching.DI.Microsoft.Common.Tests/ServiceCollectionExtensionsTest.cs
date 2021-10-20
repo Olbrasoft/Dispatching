@@ -1,10 +1,9 @@
+using Microsoft.Extensions.DependencyInjection;
+using Olbrasoft.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
-using Olbrasoft.Extensions;
 using Xunit;
 using static Xunit.Assert;
 
