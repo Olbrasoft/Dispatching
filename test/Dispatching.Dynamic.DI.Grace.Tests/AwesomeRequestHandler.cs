@@ -8,7 +8,7 @@ namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
     {
         public Task<object> HandleAsync(AwesomeRequest request, CancellationToken token)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(new object());
         }
     }
 }

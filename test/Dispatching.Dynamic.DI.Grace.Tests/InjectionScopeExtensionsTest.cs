@@ -1,6 +1,7 @@
 using Grace.DependencyInjection;
 using Olbrasoft.Extensions;
 using System;
+using Grace.DependencyInjection.Extensions;
 using Olbrasoft.Extensions.DependencyInjection;
 using Xunit;
 
@@ -91,6 +92,26 @@ namespace Olbrasoft.Dispatching.Dynamic.DI.Grace
             //Assert
             Assert.IsAssignableFrom<AwesomeRequestHandler>(handler);
         }
+
+        //[Fact]
+        //public async void MyTestMethod()
+        //{
+        //    //Arrange
+        //    var scope = CreateScope();
+
+        //    scope.Configure(p => p.Export<DynamicDispatcher>().As<IDispatcher>());
+        //    scope.Configure(p => p.Export<AwesomeRequestHandler>().As<IRequestHandler<AwesomeRequest, object>>());
+        //    scope.Configure(p => p.ExportFunc<Factory>(f => f.GetService));
+
+        //    //Act
+
+        //    var dispatcher = scope.Locate<IDispatcher>();
+        //    var request = new AwesomeRequest(dispatcher);
+        //    var response = await request.ExecuteAsync();
+
+        //    //Assert
+        //    Assert.IsAssignableFrom<DynamicDispatcher>(dispatcher);
+        //}
 
         private IInjectionScope CreateScope()
         {

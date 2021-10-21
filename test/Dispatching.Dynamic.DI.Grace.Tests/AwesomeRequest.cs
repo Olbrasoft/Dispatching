@@ -5,5 +5,9 @@
         public AwesomeRequest(IRequestHandler<Request<object>, object> handler) : base(handler)
         {
         }
+
+        public AwesomeRequest(IDispatcher dispatcher) : base(dispatcher)
+        {
+        }
     }
 }
