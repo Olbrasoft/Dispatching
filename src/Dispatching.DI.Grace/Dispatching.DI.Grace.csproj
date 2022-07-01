@@ -1,31 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
-    <LangVersion>8.0</LangVersion>
-    <nullable>enable</nullable>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Registers classes for Dispatching with Executor dispatcher to the Grace container.</Description>
-    <PackageProjectUrl></PackageProjectUrl>
-    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
-    <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
-    <Authors>Jiří Tůma</Authors>
-    <Company>Olbrasoft</Company>
-    <Copyright>Copyright @2021 Olbrasoft</Copyright>
-    <AssemblyName>Olbrasoft.Dispatching.DI.Grace</AssemblyName>
-    <RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
-    <PackageIconUrl />
-    <Version>1.3.1</Version>
-    <PackageId>Olbrasoft.Dispatching.DI.Grace</PackageId>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Olbrasoft.Dispatching" Version="1.3.0" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.3.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\olbrasoft-dispatching.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6</TargetFrameworks>
+		<LangVersion>10.0</LangVersion>
+		<nullable>enable</nullable>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Description>Registers classes for Dispatching with Executor dispatcher to the Grace container.</Description>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+		<PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
+		<Authors>Jiří Tůma</Authors>
+		<Company>Olbrasoft</Company>
+		<Copyright>Copyright @2021 Olbrasoft</Copyright>
+		<AssemblyName>Olbrasoft.Dispatching.DI.Grace</AssemblyName>
+		<RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
+		<PackageIconUrl />
+		<Version>1.4.0</Version>
+		<PackageId>Olbrasoft.Dispatching.DI.Grace</PackageId>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Olbrasoft.Dispatching" Version="1.4.0" />
+		<PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\olbrasoft-dispatching.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

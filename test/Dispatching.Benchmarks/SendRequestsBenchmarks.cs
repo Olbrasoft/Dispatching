@@ -5,13 +5,10 @@ using BenchmarkDotNet.Order;
 using LightInject;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Olbrasoft.Dispatching.Abstractions;
 using Olbrasoft.Dispatching.DI.Microsoft.Common;
-using Olbrasoft.Dispatching.Dynamic;
 using System.Threading.Tasks;
 using Grace.DependencyInjection;
 using Grace.DependencyInjection.Extensions;
-using Grace.DependencyInjection.Impl;
 using Singularity;
 
 namespace Olbrasoft.Dispatching.Benchmarks
@@ -73,13 +70,13 @@ namespace Olbrasoft.Dispatching.Benchmarks
 
             _lightInjectContainer = new ServiceContainer();
             _lightInjectContainer.RegisterScoped(typeof(Executor<,>), typeof(Executor<,>));
-            _lightInjectContainer.RegisterScoped<Abstractions.IRequestHandler<AwesomeRequest, object>, AwesomeRequestHandler>();
+            _lightInjectContainer.RegisterScoped<IRequestHandler<AwesomeRequest, object>, AwesomeRequestHandler>();
             _lightInjectContainer.RegisterScoped<Factory>(p => p.GetInstance);
 
             _simpleInjector = new SimpleInjector.Container();
 
             _simpleInjector.Register(typeof(Executor<,>), typeof(Executor<,>));
-            _simpleInjector.Register<Abstractions.IRequestHandler<AwesomeRequest, object>, AwesomeRequestHandler>();
+            _simpleInjector.Register<IRequestHandler<AwesomeRequest, object>, AwesomeRequestHandler>();
             _simpleInjector.Register<Factory>(() => _simpleInjector.GetInstance);
 
             _simpleDispatcher = new Dispatcher(_simpleInjector.GetInstance<Factory>());
@@ -105,7 +102,7 @@ namespace Olbrasoft.Dispatching.Benchmarks
             _graceContainer.Configure(c =>
             {
                 c.Export(typeof(Executor<,>)).As(typeof(Executor<,>));
-                c.Export<AwesomeRequestHandler>().As<Abstractions.IRequestHandler<AwesomeRequest, object>>();
+                c.Export<AwesomeRequestHandler>().As<IRequestHandler<AwesomeRequest, object>>();
                 c.ExportFunc<Factory>(p => p.GetService);
             });
 

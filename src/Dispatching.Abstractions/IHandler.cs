@@ -1,9 +1,8 @@
-namespace Olbrasoft.Dispatching
+namespace Olbrasoft.Dispatching;
+
+/// <summary>
+///  Defines a handler for a request
+/// </summary>
+public interface IHandler
 {
-    /// <summary>
-    ///  Defines a handler for a request
-    /// </summary>
-    public interface IHandler
-    {
-    }
 }

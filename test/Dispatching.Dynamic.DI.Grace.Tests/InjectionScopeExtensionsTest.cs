@@ -1,7 +1,6 @@
 using Grace.DependencyInjection;
 using Olbrasoft.Extensions;
 using System;
-using Grace.DependencyInjection.Extensions;
 using Olbrasoft.Extensions.DependencyInjection;
 using Xunit;
 

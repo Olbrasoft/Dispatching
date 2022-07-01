@@ -1,30 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;</TargetFrameworks>
-    <LangVersion>8.0</LangVersion>
-    <nullable>enable</nullable>
-    <Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
-    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
-    <PackageReleaseNotes>Send Request return Response alternative Mediatr.</PackageReleaseNotes>
-    <PackageTags>Mediator Dispatchig Command Query Responsibility Segredation CQS CQRS</PackageTags>
-    <Copyright>Copyright @2021 Olbrasoft</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Company>Olbrasoft</Company>
-    <Authors>Jiří Tůma</Authors>
-    <Version>1.3.0</Version>
-    <Product>Dispatching</Product>
-    <RepositoryType>git</RepositoryType>
-    <AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0</TargetFrameworks>
+		<LangVersion>10.0</LangVersion>
+		<nullable>enable</nullable>
+		<Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
+		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+		<PackageReleaseNotes>Send Request return Response alternative Mediatr.</PackageReleaseNotes>
+		<PackageTags>Mediator Dispatchig Command Query Responsibility Segredation CQS CQRS</PackageTags>
+		<Copyright>Copyright @2021 Olbrasoft</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Company>Olbrasoft</Company>
+		<Authors>Jiří Tůma</Authors>
+		<Version>1.4.0</Version>
+		<Product>Dispatching</Product>
+		<RepositoryType>git</RepositoryType>
+		<AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
+		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\.editorconfig" Link=".editorconfig" />
-    <None Include="..\..\olbrasoft-dispatching.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\.editorconfig" Link=".editorconfig" />
+		<None Include="..\..\olbrasoft-dispatching.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System.Threading"/>
+		<Using Include="System.Threading.Tasks"/>
+	</ItemGroup>
+
+
 </Project>

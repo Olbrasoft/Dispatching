@@ -1,10 +1,6 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿namespace Olbrasoft.Dispatching;
 
-namespace Olbrasoft.Dispatching
+public interface IExecutor<TResult> : IHandler
 {
-    public interface IExecutor<TResult> : IHandler
-    {
-        Task<TResult> ExecuteAsync(IRequest<TResult> query, CancellationToken token);
-    }
+    Task<TResult> ExecuteAsync(IRequest<TResult> query, CancellationToken token);
 }
