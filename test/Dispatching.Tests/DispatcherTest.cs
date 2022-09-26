@@ -52,7 +52,7 @@ namespace Olbrasoft.Dispatching
             Assert.IsAssignableFrom<object>(result);
         }
 
-        public static object Factory(Type type)
+        public static IHandler Factory(Type type) 
         {
             var mockExecutor = new Mock<IExecutor<object>>();
 

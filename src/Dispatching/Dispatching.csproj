@@ -23,11 +23,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Using Include="System.Threading"/>
-		<Using Include="System.Threading.Tasks"/>
+	  <ProjectReference Include="..\Dispatching.Abstractions\Dispatching.Abstractions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
+		<Using Include="System.Threading" />
+		<Using Include="System.Threading.Tasks" />
 	</ItemGroup>
 </Project>

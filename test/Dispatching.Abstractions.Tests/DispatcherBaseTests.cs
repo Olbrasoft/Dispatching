@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using FluentAssertions;
+using Moq;
 using System;
 using Xunit;
 
@@ -35,7 +36,7 @@ namespace Olbrasoft.Dispatching.Abstractions
 
         public Factory CreateFactory()
         {
-            Factory factory = CreateHandler;
+            Factory factory = CreateHandler<IHandler>;
 
             return factory;
         }
@@ -58,38 +59,23 @@ namespace Olbrasoft.Dispatching.Abstractions
         {
             //Arrange
             var factory = CreateFactory();
+
+            //Act
             var dispatcher = new AwesomeDispatcher(factory);
 
             //Act
             var handler = dispatcher.CallProtectedFunctionGetHandler();
 
             //Assert
-            Assert.Same(Handler, handler);
+            handler.Should().BeSameAs(Handler);
         }
 
-        [Fact]
-        public void MyTestMethod()
-        {
-            //Arrange
-            Factory factory = NullHandler;
-
-            //Act
-            var dispatcher = new AwesomeDispatcher(factory);
-
-            //Assert
-            Assert.Throws<InvalidOperationException>(() => dispatcher.CallProtectedFunctionGetHandler());
-        }
-
-        private object NullHandler(Type type)
-        {
-            return null;
-        }
 
         private IHandler _handler;
 
         private IHandler Handler => _handler ??= new AwesomeHandler();
 
-        private object CreateHandler(Type type)
+        private IHandler CreateHandler<THandler>(Type type) where THandler : IHandler
         {
             return Handler;
         }
@@ -106,6 +92,37 @@ namespace Olbrasoft.Dispatching.Abstractions
 #pragma warning disable 8604
             Assert.Throws<ArgumentNullException>(() => new AwesomeDispatcher(factory));
 #pragma warning restore 8604
+        }
+
+        [Fact]
+        public void GetHandler_Adds_Handler_To_Dictionary()
+        {
+            //Arrange
+            var factoryMock = new Mock<Factory>();
+            factoryMock.Setup(p => p(It.IsAny<Type>())).Returns(new AwesomeHandler());
+            var dispatcher = new AwesomeDispatcher(factoryMock.Object);
+
+            //Act
+            dispatcher.CallProtectedFunctionGetHandler();
+            dispatcher.CallProtectedFunctionGetHandler();
+
+            //Assert
+            factoryMock.Verify(p => p(It.IsAny<Type>()), Times.AtMostOnce);
+        }
+
+        [Fact]
+        public void GetHandler_Throw_Invalid_Operation_Factory_Not_Fount_ExactHandlerType()
+        {
+            //Arrange
+            var factoryMock = new Mock<Factory>();
+            factoryMock.Setup(p => p(It.IsAny<Type>())).Returns(null);
+            var dispatcher = new AwesomeDispatcher(factoryMock.Object);
+
+            //Act
+            var act = () => dispatcher.CallProtectedFunctionGetHandler();
+
+            //Assert
+            act.Should().Throw<InvalidOperationException>();
         }
     }
 }

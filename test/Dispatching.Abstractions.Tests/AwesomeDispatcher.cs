@@ -16,7 +16,7 @@ namespace Olbrasoft.Dispatching.Abstractions
 
         public IHandler CallProtectedFunctionGetHandler()
         {
-            return base.GetHandler<IHandler>(typeof(AwesomeHandler));
+             return GetHandler<IHandler>(typeof(AwesomeHandler));
         }
     }
 }

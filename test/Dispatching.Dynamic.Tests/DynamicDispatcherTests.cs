@@ -22,12 +22,17 @@ namespace Dispatching.Dynamic.Tests
             Assert.IsAssignableFrom(type, dispatcher);
         }
 
+        
+       
+
         [Fact]
         public async System.Threading.Tasks.Task DispatchAsync_Return_AwesomeResult()
         {
             //Arrange
             IServiceCollection services = new ServiceCollection();
-            services.AddTransient<Factory>(p => p.GetService);
+
+
+            services.AddTransient<Factory>(p=>p.GetService );
             services.AddTransient<IDispatcher, DynamicDispatcher>();
             services.AddTransient(typeof(AwesomeRequestHandler).GetInterfaces().First(), typeof(AwesomeRequestHandler));
             var provider = services.BuildServiceProvider();

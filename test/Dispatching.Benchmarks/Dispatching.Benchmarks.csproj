@@ -10,7 +10,6 @@
     <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
     <PackageReference Include="Grace.AspNetCore.MVC" Version="7.1.0" />
     <PackageReference Include="LightInject" Version="6.4.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Olbrasoft.Dispatching" Version="1.4.0" />
     <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
@@ -19,5 +18,8 @@
     <PackageReference Include="SimpleInjector" Version="5.3.3" />
     <PackageReference Include="Singularity" Version="0.18.0" />
     <PackageReference Include="Singularity.Microsoft.DependencyInjection" Version="0.18.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Gits\MediatR.Extensions.Microsoft.DependencyInjection\src\MediatR.Extensions.Microsoft.DependencyInjection\MediatR.Extensions.Microsoft.DependencyInjection.csproj" />
   </ItemGroup>
 </Project>

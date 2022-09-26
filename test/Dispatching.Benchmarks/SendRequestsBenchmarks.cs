@@ -38,7 +38,7 @@ namespace Olbrasoft.Dispatching.Benchmarks
     public class SendRequestsBenchmarks
     {
         private static readonly IServiceCollection _services = new ServiceCollection();
-        private IDispatcher _dispatcherWithExecutor;
+        private static IDispatcher _dispatcherWithExecutor;
         private IDispatcher _dynamicDispatcher;
         private IMediator _mediator;
 
@@ -87,7 +87,13 @@ namespace Olbrasoft.Dispatching.Benchmarks
 
             _services.AddScoped<Factory>(p => p.GetService);
 
+
             _services.AddMediatR(typeof(Program));
+            
+            //_services.AddScoped<MediatR.IRequestHandler<AwesomeRequest, object>, AwesomeRequestHandler>();
+
+            //_services.AddScoped<IMediator, Mediator>();
+
 
             //_singularityContainer =  new Container(builder =>
             //{
@@ -140,13 +146,13 @@ namespace Olbrasoft.Dispatching.Benchmarks
             _mediator = provider.GetService<IMediator>();
         }
 
-        //[Benchmark]
-        //public async Task DispatcherWithExecutorDispatchAsync()
-        //{
-        //    var request = new AwesomeRequest();
+        [Benchmark]
+        public async Task DispatcherWithExecutorDispatchAsync()
+        {
+            var request = new AwesomeRequest();
 
-        //    var response = await _dispatcherWithExecutor.DispatchAsync(request, default);
-        //}
+            var response = await _dispatcherWithExecutor.DispatchAsync(request, default);
+        }
 
         //[Benchmark]
         //public async Task SimpleDispatcherWithExecutorDispatchAsync()
@@ -164,21 +170,21 @@ namespace Olbrasoft.Dispatching.Benchmarks
         //    var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
         //}
 
-        [Benchmark(Baseline = true)]
-        public async Task GraceDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark(Baseline = true)]
+        //public async Task GraceDispatcherWithExecutorDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _graceDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _graceDispatcher.DispatchAsync(request, default);
+        //}
 
-        [Benchmark]
-        public async Task GraceDynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //[Benchmark]
+        //public async Task GraceDynamicDispatcherDispatchAsync()
+        //{
+        //    var request = new AwesomeRequest();
 
-            var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
-        }
+        //    var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
+        //}
 
         //[Benchmark]
         //public async Task LightInjectDispatcherWithExecutorDispatchAsync()
@@ -204,13 +210,13 @@ namespace Olbrasoft.Dispatching.Benchmarks
         //    var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
         //}
 
-        //[Benchmark]
-        //public async Task DynamicDispatcherDispatchAsync()
-        //{
-        //    var request = new AwesomeRequest();
+        [Benchmark]
+        public async Task DynamicDispatcherDispatchAsync()
+        {
+            var request = new AwesomeRequest();
 
-        //    var response = await _dynamicDispatcher.DispatchAsync(request, default);
-        //}
+            var response = await _dynamicDispatcher.DispatchAsync(request, default);
+        }
 
         //[Benchmark]
         //public async Task MediatrSendAsync()
