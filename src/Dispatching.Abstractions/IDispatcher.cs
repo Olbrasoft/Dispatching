@@ -1,7 +1,7 @@
 namespace Olbrasoft.Dispatching;
 
 /// <summary>
-/// Defines a dispatcher to encapsulate request/response and publishing interaction patterns
+/// Defines a dispatcher to encapsulate request/response
 /// </summary>
 public interface IDispatcher
 {

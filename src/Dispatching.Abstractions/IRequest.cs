@@ -1,7 +1,9 @@
 namespace Olbrasoft.Dispatching;
 
 /// <summary>
-/// Marker interface to represent a request with a response
+/// Request interface to represent a request with a response
 /// </summary>
 /// <typeparam name="TResponse">Response type</typeparam>
-public interface IRequest<out TResponse> { }
+public interface IRequest<out TResponse> 
+{}
+

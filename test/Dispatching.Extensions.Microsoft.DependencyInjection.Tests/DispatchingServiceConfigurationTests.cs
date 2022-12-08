@@ -45,7 +45,7 @@ public class DispatchingServiceConfigurationTests
         var type = configuration.DispatcherType;
 
         // Assert
-        type.Should().Be<Dispatcher>();
+        type.Should().Be<DynamicDispatcher>();
     }
 
 

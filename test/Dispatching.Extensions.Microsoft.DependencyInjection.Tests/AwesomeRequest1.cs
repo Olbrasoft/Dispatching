@@ -2,8 +2,10 @@
 {
     public class AwesomeRequest1 : BaseRequest<object>
     {
-        public AwesomeRequest1(IRequestHandler<BaseRequest<object>, object> handler) : base(handler)
+        public AwesomeRequest1(IDispatcher dispatcher) : base(dispatcher)
         {
         }
+
+       
     }
 }

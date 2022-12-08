@@ -9,13 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="RequestTests.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.7.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1" />
+    <PackageReference Include="FluentAssertions.ArgumentMatchers.Moq" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="Mono.Reflection" Version="2.0.0" />
     <PackageReference Include="Moq" Version="4.18.2" />
+    <PackageReference Include="Olbrasoft.Extensions" Version="1.0.6" />
+    <PackageReference Include="Shouldly" Version="4.1.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +23,15 @@
     </PackageReference>
   </ItemGroup>
 
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System" />
+		<Using Include="Xunit" />
+		<Using Include="Moq" />
+		<Using Include="Olbrasoft.Dispatching.Abstractions.Exceptions" />
+		<Using Include="FluentAssertions" />
+	</ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\..\src\Dispatching.Abstractions\Dispatching.Abstractions.csproj" />
   </ItemGroup>

@@ -19,7 +19,4 @@
     <PackageReference Include="Singularity" Version="0.18.0" />
     <PackageReference Include="Singularity.Microsoft.DependencyInjection" Version="0.18.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="D:\Gits\MediatR.Extensions.Microsoft.DependencyInjection\src\MediatR.Extensions.Microsoft.DependencyInjection\MediatR.Extensions.Microsoft.DependencyInjection.csproj" />
-  </ItemGroup>
 </Project>

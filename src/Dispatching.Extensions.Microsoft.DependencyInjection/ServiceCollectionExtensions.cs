@@ -1,15 +1,10 @@
-﻿using Olbrasoft.Extensions.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Olbrasoft.Dispatching;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+using Olbrasoft.Extensions.DependencyInjection;
 
 namespace Olbrasoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-
     /// <summary>
     /// Registers handlers and dispatcher types from the specified assemblies
     /// </summary>
@@ -26,9 +21,13 @@ public static class ServiceCollectionExtensions
 
         configuration?.Invoke(serviceConfiguration);
 
-        services.TryAddTransient<Factory>(p => p.GetRequiredService);
-
         services.TryAdd(new ServiceDescriptor(typeof(IDispatcher), serviceConfiguration.DispatcherType, serviceConfiguration.Lifetime));
+
+
+        services.TryAddTransient<CreateHandler>(p => p.GetHandler);
+
+        if (serviceConfiguration.DispatcherType == typeof(ExcutorDispatcher))
+            services.TryAddTransient(typeof(Executor<,>), typeof(Executor<,>));
 
         foreach (var typeInfo in assemblies.RequestHandlerTypes())
         {
@@ -61,15 +60,15 @@ public static class ServiceCollectionExtensions
     }
 
 
-    ///// <summary>
-    ///// Registers handlers and dispatcher types from the specified assemblies
-    ///// </summary>
-    ///// <param name="services">Service collection</param>
-    ///// <param name="assemblies">Assemblies to scan</param>
-    ///// <param name="configuration">The action used to configure the options</param>
-    ///// <returns>Service collection</returns>
-    //public static IServiceCollection AddDispatching(this IServiceCollection services, Action<DispatchingServiceConfiguration>? configuration, params Assembly[] assemblies)
-    //{
-    //    return services.AddDispatching(assemblies, configuration);
-    //}
+    /// <summary>
+    /// Registers handlers and dispatcher types from the specified assemblies
+    /// </summary>
+    /// <param name="services">Service collection</param>
+    /// <param name="assemblies">Assemblies to scan</param>
+    /// <param name="configuration">The action used to configure the options</param>
+    /// <returns>Service collection</returns>
+    public static IServiceCollection AddDispatching(this IServiceCollection services, Action<DispatchingServiceConfiguration>? configuration, params Assembly[] assemblies)
+    {
+        return services.AddDispatching(assemblies, configuration);
+    }
 }

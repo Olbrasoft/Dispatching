@@ -3,20 +3,21 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching.Abstractions
 {
-    public class AwesomeDispatcher : DispatcherBase
+    public class AwesomeDispatcher : BaseDispatcher
     {
-        public AwesomeDispatcher(Factory factory) : base(factory)
+        public AwesomeDispatcher(CreateHandler createHandler) : base(createHandler)
         {
         }
-
-        public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
-        {
-            throw new System.NotImplementedException();
-        }
+              
 
         public IHandler CallProtectedFunctionGetHandler()
         {
              return GetHandler<IHandler>(typeof(AwesomeHandler));
+        }
+
+        protected override Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
+        {
+            throw new NotImplementedException();
         }
     }
 }

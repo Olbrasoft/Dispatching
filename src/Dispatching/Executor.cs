@@ -9,8 +9,11 @@ public class Executor<TRequest, TResponse> : IExecutor<TResponse> where TRequest
         _handler = handler;
     }
 
-    public async Task<TResponse> ExecuteAsync(IRequest<TResponse> query, CancellationToken token = default)
+    public async Task<TResponse> ExecuteAsync(IRequest<TResponse> request, CancellationToken token = default)
     {
-        return await _handler.HandleAsync((TRequest)query, token);
+        if (request is null)
+            throw new RequestNullException();
+
+        return await _handler.HandleAsync((TRequest)request, token);
     }
 }

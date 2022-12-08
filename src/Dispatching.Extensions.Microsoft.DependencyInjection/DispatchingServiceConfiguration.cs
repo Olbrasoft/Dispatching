@@ -1,6 +1,4 @@
-﻿using Olbrasoft.Dispatching;
-
-namespace Olbrasoft.Extensions.DependencyInjection;
+﻿namespace Olbrasoft.Extensions.DependencyInjection;
 
 public class DispatchingServiceConfiguration
 {
@@ -9,7 +7,7 @@ public class DispatchingServiceConfiguration
 
     public DispatchingServiceConfiguration()
     {
-        DispatcherType = typeof(Dispatcher);
+        DispatcherType = typeof(DynamicDispatcher);
         Lifetime = ServiceLifetime.Transient;
     }
 

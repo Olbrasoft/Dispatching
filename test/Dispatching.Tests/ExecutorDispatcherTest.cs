@@ -6,17 +6,17 @@ using Xunit;
 
 namespace Olbrasoft.Dispatching
 {
-    public class DispatcherTest
+    public class ExecutorDispatcherTest
     {
         [Fact]
         public void Dispatcher_Implement_Interface_IDispatcher()
         {
             //Arrange
             var type = typeof(IDispatcher);
-            var mockFactory = new Mock<Factory>();
+            var mockFactory = new Mock<CreateHandler>();
 
             //Act
-            var dispatcher = new Dispatcher(mockFactory.Object);
+            var dispatcher = new ExcutorDispatcher(mockFactory.Object);
 
             //Assert
             Assert.IsAssignableFrom(type, dispatcher);
@@ -26,11 +26,11 @@ namespace Olbrasoft.Dispatching
         public void Dispatcher_Inherit_From_DispatcherBase()
         {
             //Arrange
-            var type = typeof(DispatcherBase);
-            var mockFactory = new Mock<Factory>();
+            var type = typeof(BaseDispatcher);
+            var mockFactory = new Mock<CreateHandler>();
 
             //Act
-            var dispatcher = new Dispatcher(mockFactory.Object);
+            var dispatcher = new ExcutorDispatcher(mockFactory.Object);
 
             //Assert
             Assert.IsAssignableFrom(type, dispatcher);
@@ -40,9 +40,9 @@ namespace Olbrasoft.Dispatching
         public async void DispatchAsync()
         {
             //Arrange
-            Factory mockFactory = Factory;
+            CreateHandler mockFactory = Factory;
 
-            var dispatcher = new Dispatcher(mockFactory);
+            var dispatcher = new ExcutorDispatcher(mockFactory);
             var mockRequest = new Mock<IRequest<object>>();
 
             //Act

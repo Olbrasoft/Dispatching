@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Olbrasoft.Dispatching;
+﻿namespace Olbrasoft.Dispatching;
 
 public class DynamicDispatcher : BaseDispatcher
 {
@@ -13,10 +9,9 @@ public class DynamicDispatcher : BaseDispatcher
     protected override Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
     {
         if (request is null)
-            throw new ArgumentNullException(nameof(request));
+            throw new RequestNullException();
 
-        var handlerType = typeof(IRequestHandler<,>)
-            .MakeGenericType(request.GetType(), typeof(TResponse));
+        var handlerType = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
 
         dynamic handler = GetHandler<IHandler>(handlerType);
 

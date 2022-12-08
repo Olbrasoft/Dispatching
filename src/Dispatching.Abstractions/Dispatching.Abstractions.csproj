@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net7.0</TargetFrameworks>
+		<LangVersion>11.0</LangVersion>
 		<nullable>enable</nullable>
 		<Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
@@ -13,15 +13,17 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Company>Olbrasoft</Company>
 		<Authors>Jiří Tůma</Authors>
-		<Version>1.4.0</Version>
+		<Version>1.7.0</Version>
 		<Product>Dispatching</Product>
 		<RepositoryType>git</RepositoryType>
 		<AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\..\.editorconfig" Link=".editorconfig" />
 		<None Include="..\..\olbrasoft-dispatching.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
@@ -30,8 +32,9 @@
 
 	<ItemGroup>
 		<Using Include="System" />
-		<Using Include="System.Threading"/>
-		<Using Include="System.Threading.Tasks"/>
+		<Using Include="System.Threading" />
+		<Using Include="System.Threading.Tasks" />
+		<Using Include="Olbrasoft.Dispatching.Abstractions.Exceptions"/>
 	</ItemGroup>
 
 

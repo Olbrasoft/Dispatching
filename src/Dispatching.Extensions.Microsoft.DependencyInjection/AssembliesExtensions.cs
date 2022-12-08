@@ -1,10 +1,4 @@
-﻿using Olbrasoft.Dispatching;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-
-namespace Olbrasoft.Extensions.Reflection;
+﻿namespace Olbrasoft.Extensions.DependencyInjection;
 
 public static class AssembliesExtensions
 {

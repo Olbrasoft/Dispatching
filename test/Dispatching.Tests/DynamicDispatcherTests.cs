@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Olbrasoft.Dispatching;
 using Olbrasoft.Dispatching.Abstractions.Exceptions;
@@ -33,7 +32,7 @@ namespace Dispatching.Dynamic.Tests
             BaseRequest<object> request = null;
 
             //Assert
-            await Assert.ThrowsAsync<ArgumentNullException>(() => dispatcher.DispatchAsync(request));
+            await Assert.ThrowsAsync<RequestNullException>(() => dispatcher.DispatchAsync(request));
         }
 
         [Fact]

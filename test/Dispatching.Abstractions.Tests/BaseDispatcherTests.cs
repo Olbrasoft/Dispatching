@@ -1,17 +1,14 @@
-﻿using FluentAssertions;
-using Moq;
-using System;
-using Xunit;
+﻿using Shouldly;
 
 namespace Olbrasoft.Dispatching.Abstractions
 {
-    public class DispatcherBaseTests
+    public class BaseDispatcherTests
     {
         [Fact]
         public void Dispatcher_Is_Abstract()
         {
             //Arrange
-            var type = typeof(DispatcherBase);
+            var type = typeof(BaseDispatcher);
 
             //Act
             var isAbstract = type.IsAbstract;
@@ -25,7 +22,7 @@ namespace Olbrasoft.Dispatching.Abstractions
         {
             //Arrange
             var factory = CreateFactory();
-            var mokDispatcher = new Mock<DispatcherBase>(factory);
+            var mokDispatcher = new Mock<BaseDispatcher>(factory);
 
             //Act
             var dispatcher = mokDispatcher.Object;
@@ -34,9 +31,9 @@ namespace Olbrasoft.Dispatching.Abstractions
             Assert.IsAssignableFrom<IDispatcher>(dispatcher);
         }
 
-        public Factory CreateFactory()
+        public CreateHandler CreateFactory()
         {
-            Factory factory = CreateHandler<IHandler>;
+            CreateHandler factory = CreateHandler<IHandler>;
 
             return factory;
         }
@@ -49,9 +46,9 @@ namespace Olbrasoft.Dispatching.Abstractions
 
             //Act
             var dispatcher = new AwesomeDispatcher(factory);
-
+         
             //Assert
-            Assert.IsAssignableFrom<DispatcherBase>(dispatcher);
+            Assert.IsAssignableFrom<BaseDispatcher>(dispatcher);
         }
 
         [Fact]
@@ -85,20 +82,23 @@ namespace Olbrasoft.Dispatching.Abstractions
         {
             //Arrange
 #pragma warning disable 8600
-            Factory factory = null;
+           CreateHandler createHandler = null;
 #pragma warning restore 8600
 
+            //act 
+            var act = () => new AwesomeDispatcher(createHandler);
+
             //Assert
-#pragma warning disable 8604
-            Assert.Throws<ArgumentNullException>(() => new AwesomeDispatcher(factory));
-#pragma warning restore 8604
+
+            act.ShouldThrow<CreateHandlerNullException>();
+
         }
 
         [Fact]
         public void GetHandler_Adds_Handler_To_Dictionary()
         {
             //Arrange
-            var factoryMock = new Mock<Factory>();
+            var factoryMock = new Mock<CreateHandler>();
             factoryMock.Setup(p => p(It.IsAny<Type>())).Returns(new AwesomeHandler());
             var dispatcher = new AwesomeDispatcher(factoryMock.Object);
 
@@ -110,19 +110,45 @@ namespace Olbrasoft.Dispatching.Abstractions
             factoryMock.Verify(p => p(It.IsAny<Type>()), Times.AtMostOnce);
         }
 
+
+
         [Fact]
-        public void GetHandler_Throw_Invalid_Operation_Factory_Not_Fount_ExactHandlerType()
+        public void GetHandler_NullHandler_ShouldThrowCreateHandlerException()
         {
             //Arrange
-            var factoryMock = new Mock<Factory>();
-            factoryMock.Setup(p => p(It.IsAny<Type>())).Returns(null);
+            var factoryMock = new Mock<CreateHandler>();
+           
+            IHandler nullHandler = null;
+
+            factoryMock.Setup(p => p(It.IsAny<Type>())).Returns(nullHandler);
             var dispatcher = new AwesomeDispatcher(factoryMock.Object);
 
             //Act
             var act = () => dispatcher.CallProtectedFunctionGetHandler();
 
             //Assert
-            act.Should().Throw<InvalidOperationException>();
+            act.ShouldThrow<CreateHandlerException>();
+        }
+
+
+        [Fact]
+        public async void DispatchAsync_WhenEventSubscriber_EvenArgsRequestShouldBeSameAsRequest()
+        {
+            // Arrange
+            var factoryMock = new Mock<CreateHandler>();
+            var dispatcher = new PingDispatcher(factoryMock.Object);
+            object who = null;
+            object requestAdept =null;
+
+            dispatcher.Sended += (sender, e) => { who = sender; requestAdept = e.Request;  };
+
+            var r = new BaseRequest<object>(dispatcher);
+            // Act
+            await dispatcher.DispatchAsync(r);
+
+            // Assert
+            who.GetType().Should().BeSameAs(typeof(PingDispatcher));
+            requestAdept.Should().BeSameAs(r);
         }
     }
 }

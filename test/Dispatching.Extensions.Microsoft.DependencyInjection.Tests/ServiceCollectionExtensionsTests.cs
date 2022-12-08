@@ -160,7 +160,6 @@ public class ServiceCollectionExtensionsTests
 
     }
 
-
     [Fact]
     public void AddDispatchingWithAsssemblyMarkers_BuildProviderAfterGetServiceOfIDispatcher_ShouldBeTypeDispatcher()
     {
@@ -173,7 +172,6 @@ public class ServiceCollectionExtensionsTests
         var result = provider.GetService<IDispatcher>();
 
         // Assert
-        result.Should().BeOfType<Dispatcher>();
+        result.Should().BeOfType<DynamicDispatcher>();
     }
-
 }

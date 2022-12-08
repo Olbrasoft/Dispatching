@@ -1,12 +1,13 @@
 ﻿using Olbrasoft.Dispatching;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Olbrasoft.Extensions.DependencyInjection;
-public class AwesomeBasicRequest:IRequest<string> 
+public class AwesomeBasicRequest : IRequest<string>
 {
-
+    public Task<string> ToResponse(CancellationToken token)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -13,16 +13,17 @@
 		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Dispatching Dependency Injection</PackageTags>
-		<Version>1.4.0</Version>
+		<Version>1.6.0</Version>
 		<Copyright>Copyright @2021 Olbrasoft</Copyright>
 		<Product>Dispatching</Product>
 		<AssemblyName>Olbrasoft.Dispatching.DI.Common</AssemblyName>
 		<RootNamespace>Olbrasoft.Extensions.Reflection</RootNamespace>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeSymbols>True</IncludeSymbols>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
-		<PackageReference Include="Olbrasoft.Extensions" Version="1.0.5" />
+		<PackageReference Include="Olbrasoft.Extensions" Version="1.0.6" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -30,6 +31,10 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Dispatching.Abstractions\Dispatching.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>

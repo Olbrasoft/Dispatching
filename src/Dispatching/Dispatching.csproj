@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net7</TargetFrameworks>
+		<LangVersion>11.0</LangVersion>
 		<nullable>enable</nullable>
 		<AssemblyName>Olbrasoft.Dispatching</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
@@ -12,7 +12,10 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
 		<PackageIconUrl />
-		<Version>1.4.0</Version>
+		<Version>1.7.0</Version>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,11 +26,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
 	  <ProjectReference Include="..\Dispatching.Abstractions\Dispatching.Abstractions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Using Include="System.Threading" />
 		<Using Include="System.Threading.Tasks" />
+		<Using Include="Olbrasoft.Dispatching.Abstractions.Exceptions"/>
 	</ItemGroup>
 </Project>
