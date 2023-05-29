@@ -9,11 +9,19 @@
 		<RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>olbrasoft-dispatching-extensions-microsoft-dependency-injection.png</PackageIcon>
 		<Title>Is used to easily register classes needed by dispatching </Title>
 		<IncludeSymbols>True</IncludeSymbols>
-		<Version>1.7.0</Version>
+		<Version>1.7.1</Version>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\olbrasoft-dispatching-extensions-microsoft-dependency-injection.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
