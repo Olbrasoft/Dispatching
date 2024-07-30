@@ -67,6 +67,19 @@ namespace Olbrasoft.Dispatching.Abstractions
             Assert.Same(Handler, handler);
         }
 
+        //add test argument null exception type input in GetHandler
+        [Fact]
+        public void GetHandler_Throw_ArgumentNullException_Type()
+        {
+            //Arrange
+            var factory = CreateFactory();
+            var dispatcher = new AwesomeDispatcher(factory);
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(() => dispatcher.CallProtectedFunctionGetHandlerWithNUll());
+        }
+
+
         [Fact]
         public void MyTestMethod()
         {

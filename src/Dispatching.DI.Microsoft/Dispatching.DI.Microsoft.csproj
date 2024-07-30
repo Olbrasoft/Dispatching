@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;Net6</TargetFrameworks>
-    <LangVersion>10.0</LangVersion>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
     <nullable>enable</nullable>
     <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
     <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
-    <Version>1.4.0</Version>
+    <Version>1.8.1</Version>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
     <Product>Dispatching</Product>
@@ -17,15 +17,20 @@
     <RepositoryType>git</RepositoryType>
     <AssemblyName>Olbrasoft.Dispatching.DI.Microsoft</AssemblyName>
     <RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\olbrasoft-dispatching.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Olbrasoft.Dispatching" Version="1.4.0" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft.Common" Version="1.4.0" />
+    <PackageReference Include="Olbrasoft.Dispatching" Version="1.8.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft.Common" Version="1.8.3" />
   </ItemGroup>
 </Project>

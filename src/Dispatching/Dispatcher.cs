@@ -1,16 +1,19 @@
+using System;
+
 namespace Olbrasoft.Dispatching;
 
-public class Dispatcher : DispatcherBase
+public class Dispatcher(Factory factory) : DispatcherBase(factory)
 {
-    public Dispatcher(Factory factory) : base(factory)
-    {
-    }
-
     public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
     {
-        var executor = GetHandler<IExecutor<TResponse>>(typeof(Executor<,>)
-                .MakeGenericType(request.GetType(), typeof(TResponse)));
+        if (request is not null)
+        {
+            var executor = GetHandler<IExecutor<TResponse>>(typeof(Executor<,>)
+                    .MakeGenericType(request.GetType(), typeof(TResponse)));
 
-        return executor.ExecuteAsync(request, token);
+            return executor.ExecuteAsync(request, token);
+        }
+
+        throw new ArgumentNullException(nameof(request));
     }
-}
+}   

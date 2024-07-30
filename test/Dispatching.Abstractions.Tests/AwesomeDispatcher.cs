@@ -18,5 +18,11 @@ namespace Olbrasoft.Dispatching.Abstractions
         {
             return base.GetHandler<IHandler>(typeof(AwesomeHandler));
         }
+
+        //throw argument null exception 
+        public IHandler CallProtectedFunctionGetHandlerWithNUll()
+        {
+            return base.GetHandler<IHandler>(null);
+        }
     }
 }

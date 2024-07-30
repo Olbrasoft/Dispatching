@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
 		<Authors>Jiří Tůma</Authors>
@@ -13,22 +13,27 @@
 		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Dispatching Dependency Injection</PackageTags>
-		<Version>1.4.0</Version>
+		<Version>1.8.0</Version>
 		<Copyright>Copyright @2021 Olbrasoft</Copyright>
 		<Product>Dispatching</Product>
 		<AssemblyName>Olbrasoft.Dispatching.DI.Common</AssemblyName>
 		<RootNamespace>Olbrasoft.Extensions.Reflection</RootNamespace>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
-		<PackageReference Include="Olbrasoft.Extensions" Version="1.0.5" />
+		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.0" />
+		<PackageReference Include="Olbrasoft.Extensions" Version="1.8.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\olbrasoft-dispatching.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 

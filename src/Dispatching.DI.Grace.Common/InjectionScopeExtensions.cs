@@ -17,7 +17,7 @@ namespace Olbrasoft.Dispatching.DI.Grace.Common
             if (assemblies is null)
                 throw new ArgumentNullException(nameof(assemblies));
 
-            scope.Configure(block => block.ExportFunc<Factory>(p => p.GetService));
+            scope.Configure(block => block.ExportFunc<Factory>(p => p.GetService!));
 
             foreach (var typeInfo in assemblies.RequestHandlerTypes())
             {

@@ -36,6 +36,26 @@ namespace Olbrasoft.Dispatching
             Assert.IsAssignableFrom(type, dispatcher);
         }
 
+
+        //add test null exception request DispatchAsync
+        [Fact]
+        public async void DispatchAsync_Throw_ArgumentNullException_Request()
+        {
+            //Arrange
+            var mockFactory = new Mock<Factory>();
+            var dispatcher = new Dispatcher(mockFactory.Object);
+            IRequest<object> request = null;
+
+            //Act
+            async Task Act()
+            {
+                await dispatcher.DispatchAsync(request, default);
+            }
+
+            //Assert
+            await Assert.ThrowsAsync<ArgumentNullException>(Act);
+        }
+
         [Fact]
         public async void DispatchAsync()
         {
@@ -61,5 +81,8 @@ namespace Olbrasoft.Dispatching
 
             return mockExecutor.Object;
         }
+
+
+
     }
 }

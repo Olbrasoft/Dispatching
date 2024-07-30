@@ -29,7 +29,7 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         {
             //Arrange
             var type = typeof(IServiceCollection);
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             var result = services.AddRequestsAndRequestHandlers();
@@ -42,20 +42,20 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         public void AddRequestsAndRequestHandlers_Adds_One_Request()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             services.AddRequestsAndRequestHandlers(typeof(AwesomeRequest).Assembly);
 
             //Assert
-            True(services.Count() == 2);
+            Assert.Equal(2, services.Count);
         }
 
         [Fact]
         public void Microsoft_DI_Container_Default_No_Registered_Function_Corresponded_Factory()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             //services.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly);
@@ -66,22 +66,19 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
             Assert.True(factory is null);
         }
 
-        private static IServiceCollection CreateServices()
-        {
-            return new ServiceCollection();
-        }
+        private static IServiceCollection CreateServices => new ServiceCollection();
 
         [Fact]
         public void AddRequestHandlers()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             services.AddRequestHandlers(typeof(AwesomeRequestHandler).Assembly);
 
             //Assert
-            True(services.Count == 1);
+            Assert.Single(services);
         }
 
         [Fact]
@@ -89,7 +86,7 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         {
             //Arrange
             var type = typeof(IServiceCollection);
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             var result = services.AddRequestHandlers();
@@ -102,20 +99,22 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         public void AddFactoryAndRequestHandlers()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             services.AddFactoryAndRequestHandlers(typeof(AwesomeRequestHandler).Assembly);
 
             //Assert
+#pragma warning disable xUnit2024 // Do not use boolean asserts for simple equality tests
             True(services.Count == 2);
+#pragma warning restore xUnit2024 // Do not use boolean asserts for simple equality tests
         }
 
         [Fact]
         public void AddFactoryAndRequestHandlers_Returns_IServiceCollection()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             var result = services.AddFactoryAndRequestHandlers();
@@ -133,14 +132,14 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
             //Assert
             Throws<ArgumentNullException>(() =>
                 // ReSharper disable once AssignNullToNotNullAttribute
-                services.AddRequestsAndRequestHandlers(new List<Assembly>().ToArray()));
+                services.AddRequestsAndRequestHandlers([]));
         }
 
         [Fact]
         public void AddRequestsAndRequestHandlers_If_Assemblies_Is_Null_Throw_ArgumentNullException()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             // ReSharper disable once AssignNullToNotNullAttribute
@@ -168,7 +167,7 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         public void AddRequestHandlers_If_assemblies_Is_Null_Throw_ArgumentNullException()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             // ReSharper disable once AssignNullToNotNullAttribute
@@ -196,7 +195,7 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
         public void AddFactoryAndRequestHandlers_Throw_ArgumentNullException_When_Assemblies_Is_Null()
         {
             //Arrange
-            var services = CreateServices();
+            var services = CreateServices;
 
             //Act
             // ReSharper disable once AssignNullToNotNullAttribute

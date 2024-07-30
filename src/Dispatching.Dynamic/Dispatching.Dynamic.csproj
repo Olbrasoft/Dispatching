@@ -1,32 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6</TargetFrameworks>
-    <LangVersion>10.0</LangVersion>
-    <nullable>enable</nullable>
-    <Description>Dispatcher implemented using dynamics</Description>
-    <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
-    <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>Mediator Dispatchig Dynamic Command Query Responsibility Segredation</PackageTags>
-    <Authors>Jiří Tůma</Authors>
-    <Company>Olbrasoft</Company>
-    <Product>Dispatching</Product>
-    <Copyright>Copyright ©2021 Olbrasoft</Copyright>
-    <Version>1.4.0</Version>
-    <AssemblyName>Olbrasoft.Dispatching.Dynamic</AssemblyName>
-    <RootNamespace>Olbrasoft.Dispatching</RootNamespace>
-    <PackageId>Olbrasoft.Dispatching.Dynamic</PackageId>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="..\..\olbrasoft-dispatching.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net8.0</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
+		<nullable>enable</nullable>
+		<Description>Dispatcher implemented using dynamics</Description>
+		<PackageProjectUrl>https://github.com/Olbrasoft/Dispatching</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
+		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>Mediator Dispatchig Dynamic Command Query Responsibility Segredation</PackageTags>
+		<Authors>Jiří Tůma</Authors>
+		<Company>Olbrasoft</Company>
+		<Product>Dispatching</Product>
+		<Copyright>Copyright ©2021 Olbrasoft</Copyright>
+		<Version>1.8.0</Version>
+		<AssemblyName>Olbrasoft.Dispatching.Dynamic</AssemblyName>
+		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+		<PackageId>Olbrasoft.Dispatching.Dynamic</PackageId>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\olbrasoft-dispatching.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.0" />
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+	</ItemGroup>
 </Project>

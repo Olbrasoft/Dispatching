@@ -18,5 +18,5 @@
 
 
 Benchmark Dispatcher vs DynamicDispatcher vs Mediatr:  
-![Olbrasoft Dispatching Benchmark](./benchmark.png)
-![Olbrasoft Dispatching](./olbrasoft-dispatching.png)
+![Olbrasoft Dispatching Benchmark](https://raw.githubusercontent.com/Olbrasoft/Dispatching/master/benchmark.png)
+![Olbrasoft Dispatching](https://raw.githubusercontent.com/Olbrasoft/Dispatching/master/olbrasoft-dispatching.png)

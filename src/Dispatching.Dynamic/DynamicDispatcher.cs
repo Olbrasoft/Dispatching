@@ -4,22 +4,20 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching;
 
-public class DynamicDispatcher : DispatcherBase
+public class DynamicDispatcher(Factory factory) : DispatcherBase(factory)
 {
-    public DynamicDispatcher(Factory factory) : base(factory)
-    {
-    }
-
     public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
     {
-        if (request is null)
-            throw new ArgumentNullException(nameof(request));
+        if (request is not null)
+        {
+            var handlerType = typeof(IRequestHandler<,>)
+                    .MakeGenericType(request.GetType(), typeof(TResponse));
 
-        var handlerType = typeof(IRequestHandler<,>)
-            .MakeGenericType(request.GetType(), typeof(TResponse));
+            dynamic handler = GetHandler<IHandler>(handlerType);
 
-        dynamic handler = GetHandler<IHandler>(handlerType);
+            return handler.HandleAsync((dynamic)request, token);
+        }
 
-        return handler.HandleAsync((dynamic)request, token);
+        throw new ArgumentNullException(nameof(request));
     }
 }

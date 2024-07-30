@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>Registers classes for Dispatching with Executor dispatcher to the Grace container.</Description>
@@ -15,17 +15,22 @@
 		<AssemblyName>Olbrasoft.Dispatching.DI.Grace</AssemblyName>
 		<RootNamespace>Olbrasoft.Extensions.DependencyInjection</RootNamespace>
 		<PackageIconUrl />
-		<Version>1.4.0</Version>
+		<Version>1.8.0</Version>
 		<PackageId>Olbrasoft.Dispatching.DI.Grace</PackageId>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching" Version="1.4.0" />
-		<PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.4.0" />
+		<PackageReference Include="Olbrasoft.Dispatching" Version="1.8.0" />
+		<PackageReference Include="Olbrasoft.Dispatching.DI.Grace.Common" Version="1.8.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="..\..\olbrasoft-dispatching.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 </Project>

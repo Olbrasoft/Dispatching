@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net8.0</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<AssemblyName>Olbrasoft.Dispatching</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
@@ -12,7 +12,8 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
 		<PackageIconUrl />
-		<Version>1.4.0</Version>
+		<Version>1.8.0</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,14 +21,20 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Using Include="System.Threading"/>
-		<Using Include="System.Threading.Tasks"/>
+	  <PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.0" />
+	  <PackageReference Include="System.Net.Http" Version="4.3.4" />
+	  <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.4.0" />
+		<Using Include="System.Threading" />
+		<Using Include="System.Threading.Tasks" />
 	</ItemGroup>
 </Project>

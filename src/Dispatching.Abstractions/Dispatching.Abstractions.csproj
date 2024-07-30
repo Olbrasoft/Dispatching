@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net8.0</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
@@ -13,11 +13,12 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Company>Olbrasoft</Company>
 		<Authors>Jiří Tůma</Authors>
-		<Version>1.4.0</Version>
+		<Version>1.8.0</Version>
 		<Product>Dispatching</Product>
 		<RepositoryType>git</RepositoryType>
 		<AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -26,13 +27,15 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Using Include="System" />
-		<Using Include="System.Threading"/>
-		<Using Include="System.Threading.Tasks"/>
+		<Using Include="System.Threading" />
+		<Using Include="System.Threading.Tasks" />
 	</ItemGroup>
-
-
 </Project>

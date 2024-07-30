@@ -1,5 +1,7 @@
 using Moq;
+using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Olbrasoft.Dispatching
@@ -23,6 +25,41 @@ namespace Olbrasoft.Dispatching
         private static Mock<IRequestHandler<IRequest<object>, object>> HadlerMock()
         {
             return new Mock<IRequestHandler<IRequest<object>, object>>();
+        }
+
+
+        //add test null exception handler
+        [Fact]
+        public void Constructor_Throw_ArgumentNullException_Handler()
+        {
+            //Arrange
+            IRequestHandler<IRequest<object>, object> handler = null;
+
+            //Act
+            void Act() => new Executor<IRequest<object>, object>(handler);
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(Act);
+        }
+
+
+        //test ExecuteAsync thorw argument null exception query
+        [Fact]
+        public async void ExecuteAsync_Throw_ArgumentNullException_Query()
+        {
+            //Arrange
+            var mockHandler = HadlerMock();
+            var executor = new Executor<IRequest<object>, object>(mockHandler.Object);
+            IRequest<object> query = null;
+
+            //Act
+            async Task Act()
+            {
+                await executor.ExecuteAsync(query);
+            }
+
+            //Assert
+            await Assert.ThrowsAsync<ArgumentNullException>(Act);
         }
 
         [Fact]
