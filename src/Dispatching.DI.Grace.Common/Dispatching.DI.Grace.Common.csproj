@@ -15,7 +15,7 @@
     <Copyright>Copyright @2021 Olbrasoft</Copyright>
     <AssemblyName>Olbrasoft.Dispatching.DI.Grace.Common</AssemblyName>
     <RootNamespace>Olbrasoft.Dispatching.DI.Grace.Common</RootNamespace>
-    <Version>1.8.0</Version>
+    <Version>1.8.1</Version>
     <PackageIconUrl />
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

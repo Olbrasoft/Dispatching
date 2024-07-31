@@ -1,4 +1,7 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Toolchains.InProcess.Emit;
 
 namespace Olbrasoft.Dispatching.Benchmarks
 {
@@ -6,8 +9,11 @@ namespace Olbrasoft.Dispatching.Benchmarks
     {
         private static void Main(string[] args)
         {
-            //BenchmarkRunner.Run<DateTimeParserBenchmarks>();
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
+            var config = ManualConfig.Create(DefaultConfig.Instance);
+
+            config.AddJob(Job.Default.WithToolchain(InProcessEmitToolchain.Instance));
+                          
+            BenchmarkRunner.Run<SendRequestsBenchmarks>(config);
         }
     }
 }

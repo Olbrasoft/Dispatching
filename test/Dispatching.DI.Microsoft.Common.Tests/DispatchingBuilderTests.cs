@@ -35,5 +35,22 @@ namespace Olbrasoft.Dispatching.DI.Microsoft.Common
             // Assert
             Assert.Equal("Value cannot be null. (Parameter 'services')", exception.Message);
         }
+
+        //property Services is read-only
+        [Fact]
+        public void DispatchingBuilder_PropertyServices_IsReadOnly()
+        {
+            // Arrange
+            var type = typeof(DispatchingBuilder);
+            var property = type.GetProperty("Services");
+
+            // Act
+            var result = property.GetSetMethod(true) == null;
+
+            // Assert
+            Assert.True(result);
+        }
+
+
     }
 }

@@ -7,7 +7,7 @@
 
     <AssemblyName>Olbrasoft.Dispatching.Dynamic.DI.Grace.Tests</AssemblyName>
 
-    <RootNamespace>Olbrasoft.Dispatching.Dynamic.DI.Grace</RootNamespace>
+    <RootNamespace>Olbrasoft.Dispatching.Dynamic.DI.Grace.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
