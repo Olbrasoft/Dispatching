@@ -1,6 +1,6 @@
 ﻿namespace Olbrasoft.Dispatching;
 
-public interface IExecutor<TResult> : IHandler
+public interface IExecutor<TResponse> : IHandler
 {
-    Task<TResult> ExecuteAsync(IRequest<TResult> query, CancellationToken token);
+    Task<TResponse> ExecuteAsync(IRequest<TResponse> query, CancellationToken token);
 }

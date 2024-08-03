@@ -13,7 +13,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Company>Olbrasoft</Company>
 		<Authors>Jiří Tůma</Authors>
-		<Version>1.8.0</Version>
+		<Version>1.8.2</Version>
 		<Product>Dispatching</Product>
 		<RepositoryType>git</RepositoryType>
 		<AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>

@@ -1,6 +1,6 @@
 ﻿namespace Olbrasoft.Dispatching;
 
-public abstract class DispatcherBase(Factory factory) : IDispatcher
+public abstract class BaseDispatcher(Factory factory) : IDispatcher
 {
     private readonly Factory _factory = factory ?? throw new ArgumentNullException(nameof(factory));
 

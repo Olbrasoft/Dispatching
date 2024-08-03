@@ -1,8 +1,4 @@
-﻿using Moq;
-using System;
-using Xunit;
-
-namespace Olbrasoft.Dispatching.Abstractions
+﻿namespace Olbrasoft.Dispatching.Abstractions
 {
     public class DispatcherBaseTests
     {
@@ -10,7 +6,7 @@ namespace Olbrasoft.Dispatching.Abstractions
         public void Dispatcher_Is_Abstract()
         {
             //Arrange
-            var type = typeof(DispatcherBase);
+            var type = typeof(BaseDispatcher);
 
             //Act
             var isAbstract = type.IsAbstract;
@@ -24,7 +20,7 @@ namespace Olbrasoft.Dispatching.Abstractions
         {
             //Arrange
             var factory = CreateFactory();
-            var mokDispatcher = new Mock<DispatcherBase>(factory);
+            var mokDispatcher = new Mock<BaseDispatcher>(factory);
 
             //Act
             var dispatcher = mokDispatcher.Object;
@@ -50,7 +46,7 @@ namespace Olbrasoft.Dispatching.Abstractions
             var dispatcher = new AwesomeDispatcher(factory);
 
             //Assert
-            Assert.IsAssignableFrom<DispatcherBase>(dispatcher);
+            Assert.IsAssignableFrom<BaseDispatcher>(dispatcher);
         }
 
         [Fact]

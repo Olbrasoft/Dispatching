@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching.Abstractions
 {
-    public class AwesomeDispatcher : DispatcherBase
+    public class AwesomeDispatcher : BaseDispatcher
     {
         public AwesomeDispatcher(Factory factory) : base(factory)
         {

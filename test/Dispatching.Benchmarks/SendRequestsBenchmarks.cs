@@ -38,27 +38,55 @@ namespace Olbrasoft.Dispatching.Benchmarks
     public class SendRequestsBenchmarks
     {
         private static readonly IServiceCollection _services = new ServiceCollection();
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _dispatcherWithExecutor;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _dynamicDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
         private IMediator _mediator;
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private static IServiceContainer _lightInjectContainer;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private static IContainer _singularityContainer;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private static IInjectionScope _graceContainer;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
         private static SimpleInjector.Container _simpleInjector;
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _lightInjectDispatcherWithExecutor;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _LightInjectDispatcherDynamic;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning restore IDE1006 // Naming Styles
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _singularityDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _singularityDynamicDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _graceDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _graceDynamicDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
 
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _simpleDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
         private IDispatcher _simpleDynamicDispatcher;
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
 
         [GlobalSetup]
         public void Setup()
@@ -83,7 +111,7 @@ namespace Olbrasoft.Dispatching.Benchmarks
 
             _simpleDynamicDispatcher = new DynamicDispatcher(_simpleInjector.GetInstance<Factory>());
 
-            _services.AddRequestHandlers(new[] { typeof(Program).Assembly });
+            _services.AddRequestHandlers([typeof(Program).Assembly]);
 
             _services.AddScoped<Factory>(p => p.GetService);
 
@@ -109,35 +137,38 @@ namespace Olbrasoft.Dispatching.Benchmarks
             var fac = _graceContainer.Locate<Factory>();
 
             var graceFactory = _graceContainer.Locate<Factory>();
-            if (graceFactory == null) throw new ArgumentNullException();
-
-            _graceDispatcher = new Dispatcher(graceFactory);
-            _graceDynamicDispatcher = new DynamicDispatcher(graceFactory);
-
-            var provider = _services.BuildServiceProvider();
-
-            var factory = provider.GetService<Factory>();
-
-            Factory f;
-
-            using (var scope = _lightInjectContainer.BeginScope())
+            if (graceFactory != null)
             {
-                f = scope.GetInstance<Factory>();
+                _graceDispatcher = new Dispatcher(graceFactory);
+                _graceDynamicDispatcher = new DynamicDispatcher(graceFactory);
+
+                var provider = _services.BuildServiceProvider();
+
+                var factory = provider.GetService<Factory>();
+
+                Factory f;
+
+                using (var scope = _lightInjectContainer.BeginScope())
+                {
+                    f = scope.GetInstance<Factory>();
+                }
+
+                var singularityFactory = _singularityContainer.GetInstance<Factory>();
+
+                _lightInjectDispatcherWithExecutor = new Dispatcher(f);
+                _LightInjectDispatcherDynamic = new DynamicDispatcher(f);
+
+                _singularityDispatcher = new Dispatcher(singularityFactory);
+                _singularityDynamicDispatcher = new DynamicDispatcher(singularityFactory);
+
+                _dispatcherWithExecutor = new Dispatcher(factory);
+
+                _dynamicDispatcher = new DynamicDispatcher(factory);
+
+                _mediator = provider.GetService<IMediator>();
             }
-
-            var singularityFactory = _singularityContainer.GetInstance<Factory>();
-
-            _lightInjectDispatcherWithExecutor = new Dispatcher(f);
-            _LightInjectDispatcherDynamic = new DynamicDispatcher(f);
-
-            _singularityDispatcher = new Dispatcher(singularityFactory);
-            _singularityDynamicDispatcher = new DynamicDispatcher(singularityFactory);
-
-            _dispatcherWithExecutor = new Dispatcher(factory);
-
-            _dynamicDispatcher = new DynamicDispatcher(factory);
-
-            _mediator = provider.GetService<IMediator>();
+            else
+                throw new ArgumentNullException();
         }
 
         [Benchmark]
@@ -145,7 +176,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _dispatcherWithExecutor.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -153,7 +186,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _simpleDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -161,7 +196,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -169,7 +206,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _graceDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -177,7 +216,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -185,7 +226,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _lightInjectDispatcherWithExecutor.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -193,7 +236,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _singularityDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -201,7 +246,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -209,7 +256,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _dynamicDispatcher.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -217,7 +266,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _mediator.Send(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
         [Benchmark]
@@ -225,7 +276,9 @@ namespace Olbrasoft.Dispatching.Benchmarks
         {
             var request = new AwesomeRequest();
 
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var response = await _LightInjectDispatcherDynamic.DispatchAsync(request, default);
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
     }
 }

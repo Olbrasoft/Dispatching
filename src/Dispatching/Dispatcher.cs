@@ -2,7 +2,7 @@ using System;
 
 namespace Olbrasoft.Dispatching;
 
-public class Dispatcher(Factory factory) : DispatcherBase(factory)
+public class Dispatcher(Factory factory) : BaseDispatcher(factory)
 {
     public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
     {

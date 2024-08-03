@@ -76,6 +76,6 @@ public static class ServiceCollectionExtensions
             ? throw new ArgumentNullException(nameof(services))
             : assemblies is null
             ? throw new ArgumentNullException(nameof(assemblies))
-            : new DispatchingBuilder (services.AddRequestsAndRequestHandlers(assemblies) );
+            : new DispatchingBuilder (services.AddFactoryAndRequestHandlers(assemblies));
     }
 }

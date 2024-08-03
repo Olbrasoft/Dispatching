@@ -15,7 +15,7 @@
 		<Copyright>Copyright @2021 Olbrasoft</Copyright>
 		<AssemblyName>Olbrasoft.Dispatching.DI.Microsoft.Common</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching.DI.Microsoft.Common</RootNamespace>
-		<Version>1.8.3</Version>
+		<Version>1.8.5</Version>
 		<PackageIconUrl />
 		<UserSecretsId>e0bb4ebd-c952-4b31-9de2-0e2e51d09fff</UserSecretsId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -29,7 +29,7 @@
 	
 	
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.8.0" />
+		<PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.8.2" />
 	</ItemGroup>
 
 	<ItemGroup>
