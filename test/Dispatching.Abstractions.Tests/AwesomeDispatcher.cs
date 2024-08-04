@@ -3,12 +3,8 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching.Abstractions
 {
-    public class AwesomeDispatcher : BaseDispatcher
+    public class AwesomeDispatcher(Factory factory) : BaseDispatcher(factory)
     {
-        public AwesomeDispatcher(Factory factory) : base(factory)
-        {
-        }
-
         public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
         {
             throw new System.NotImplementedException();

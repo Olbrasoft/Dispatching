@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net8.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;Net6.0;Net8.0</TargetFrameworks>
 		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<Description>Dispatcher implemented using dynamics</Description>
@@ -13,7 +13,7 @@
 		<Company>Olbrasoft</Company>
 		<Product>Dispatching</Product>
 		<Copyright>Copyright ©2021 Olbrasoft</Copyright>
-		<Version>1.8.0</Version>
+		<Version>1.8.4</Version>
 		<AssemblyName>Olbrasoft.Dispatching.Dynamic</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching</RootNamespace>
 		<PackageId>Olbrasoft.Dispatching.Dynamic</PackageId>
@@ -33,7 +33,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.0" />
+		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.4" />
 		<PackageReference Include="System.Net.Http" Version="4.3.4" />
 		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
 	</ItemGroup>

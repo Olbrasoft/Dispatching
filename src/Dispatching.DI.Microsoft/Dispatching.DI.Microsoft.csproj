@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;Net6;Net8</TargetFrameworks>
     <LangVersion>12.0</LangVersion>
     <nullable>enable</nullable>
     <PackageIcon>olbrasoft-dispatching.png</PackageIcon>
@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/Olbrasoft/Dispatching/</PackageProjectUrl>
     <PackageTags>Dependency Injection Mediator Dispatchig Command Query Responsibility Segredation</PackageTags>
     <Description>Registers classes for Dispatching with Executor dispatcher to the Microsoft container.</Description>
-    <Version>1.8.3</Version>
+    <Version>1.8.4</Version>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
     <Product>Dispatching</Product>
@@ -30,7 +30,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Olbrasoft.Dispatching" Version="1.8.2" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft.Common" Version="1.8.4" />
+    <PackageReference Include="Olbrasoft.Dispatching" Version="1.8.4" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Microsoft.Common" Version="1.8.7" />
   </ItemGroup>
 </Project>

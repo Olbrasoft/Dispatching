@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;Net6;Net8</TargetFrameworks>
 		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<PackageIcon>olbrasoft-dispatching.png</PackageIcon>
@@ -13,7 +13,7 @@
 		<RepositoryUrl>https://github.com/Olbrasoft/Dispatching</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Dispatching Dependency Injection</PackageTags>
-		<Version>1.8.2</Version>
+		<Version>1.8.4</Version>
 		<Copyright>Copyright @2021 Olbrasoft</Copyright>
 		<Product>Dispatching</Product>
 		<AssemblyName>Olbrasoft.Dispatching.DI.Common</AssemblyName>
@@ -22,7 +22,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.2" />
+		<PackageReference Include="Olbrasoft.Dispatching.Abstractions" Version="1.8.4" />
 		<PackageReference Include="Olbrasoft.Extensions" Version="1.8.0" />
 	</ItemGroup>
 

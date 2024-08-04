@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;Net6;Net8</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;Net6;Net8</TargetFrameworks>
     <LangVersion>12.0</LangVersion>
     <nullable>enable</nullable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Grace" Version="7.2.1" />
-    <PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.4.0" />
+    <PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.8.3" />
   </ItemGroup>
 
   <ItemGroup>

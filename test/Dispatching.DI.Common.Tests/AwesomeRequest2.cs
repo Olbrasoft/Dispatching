@@ -1,9 +1,7 @@
 ﻿namespace Olbrasoft.Dispatching.DI.Common
 {
-    public class AwesomeRequest2 : Request<object>
+    public class AwesomeRequest2 : IRequest<object>
     {
-        public AwesomeRequest2(IDispatcher dispatcher) : base(dispatcher)
-        {
-        }
+      
     }
 }

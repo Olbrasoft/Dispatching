@@ -34,7 +34,7 @@ namespace Olbrasoft.Dispatching.DI.Common
             var result = assemblies.RequestTypes();
 
             //Assert
-            Assert.True(result.Count() == 2);
+            Assert.Equal(2, result.Count());
         }
 
         [Fact]
@@ -50,7 +50,8 @@ namespace Olbrasoft.Dispatching.DI.Common
             var result = assemblies.RequestHandlerTypes();
 
             //Assert
-            Assert.True(result.Count() == 1);
+            Assert.Single(result);
+
         }
 
         [Fact]

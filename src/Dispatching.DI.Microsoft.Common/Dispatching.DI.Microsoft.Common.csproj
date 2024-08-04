@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>Netstandard2.0;Netstandard2.1;Net6;Net8</TargetFrameworks>
+		<TargetFrameworks>Netstandard2.1;Net6;Net8</TargetFrameworks>
 		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -15,7 +15,7 @@
 		<Copyright>Copyright @2021 Olbrasoft</Copyright>
 		<AssemblyName>Olbrasoft.Dispatching.DI.Microsoft.Common</AssemblyName>
 		<RootNamespace>Olbrasoft.Dispatching.DI.Microsoft.Common</RootNamespace>
-		<Version>1.8.5</Version>
+		<Version>1.8.7</Version>
 		<PackageIconUrl />
 		<UserSecretsId>e0bb4ebd-c952-4b31-9de2-0e2e51d09fff</UserSecretsId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -29,7 +29,7 @@
 	
 	
 	<ItemGroup>
-		<PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.8.2" />
+		<PackageReference Include="Olbrasoft.Dispatching.DI.Common" Version="1.8.4" />
 	</ItemGroup>
 
 	<ItemGroup>

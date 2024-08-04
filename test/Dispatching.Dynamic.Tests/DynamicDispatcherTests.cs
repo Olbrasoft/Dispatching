@@ -34,7 +34,7 @@ namespace Dispatching.Dynamic.Tests
 
             var dispatcher = provider.GetService<IDispatcher>();
 
-            var request = new AwesomeRequest(dispatcher);
+            var request = new AwesomeRequest();
 
             //Act
             var result = await dispatcher.DispatchAsync(request, default);
@@ -48,7 +48,7 @@ namespace Dispatching.Dynamic.Tests
         {
             //Arrange
             var dispatcher = new DynamicDispatcher(CreateFactory());
-            Request<object> request = null;
+            IRequest<object> request = null;
 
             //Assert
             await Assert.ThrowsAsync<ArgumentNullException>(() => dispatcher.DispatchAsync(request));
@@ -74,7 +74,7 @@ namespace Dispatching.Dynamic.Tests
             var dispatcher = new DynamicDispatcher(factory);
 
             //Assert
-            Assert.IsAssignableFrom<DispatcherBase>(dispatcher);
+            Assert.IsAssignableFrom<BaseDispatcher>(dispatcher);
         }
 
         private static Factory CreateFactory()

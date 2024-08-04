@@ -26,7 +26,7 @@ namespace Olbrasoft.Dispatching
         public void Dispatcher_Inherit_From_DispatcherBase()
         {
             //Arrange
-            var type = typeof(DispatcherBase);
+            var type = typeof(BaseDispatcher);
             var mockFactory = new Mock<Factory>();
 
             //Act
@@ -39,7 +39,7 @@ namespace Olbrasoft.Dispatching
 
         //add test null exception request DispatchAsync
         [Fact]
-        public async void DispatchAsync_Throw_ArgumentNullException_Request()
+        public async Task DispatchAsync_Throw_ArgumentNullException_Request()
         {
             //Arrange
             var mockFactory = new Mock<Factory>();
@@ -57,7 +57,7 @@ namespace Olbrasoft.Dispatching
         }
 
         [Fact]
-        public async void DispatchAsync()
+        public async Task DispatchAsync()
         {
             //Arrange
             Factory mockFactory = Factory;

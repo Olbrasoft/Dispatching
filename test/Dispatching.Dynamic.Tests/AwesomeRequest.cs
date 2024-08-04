@@ -2,10 +2,8 @@
 
 namespace Dispatching.Dynamic.Tests
 {
-    public class AwesomeRequest : Request<AwesomeResponse>
+    public class AwesomeRequest : IRequest<AwesomeResponse>
     {
-        public AwesomeRequest(IDispatcher dispatcher) : base(dispatcher)
-        {
-        }
+     
     }
 }

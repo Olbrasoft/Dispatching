@@ -1,7 +1,6 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
-
 using LightInject;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -115,7 +114,7 @@ namespace Olbrasoft.Dispatching.Benchmarks
 
             _services.AddScoped<Factory>(p => p.GetService);
 
-            _services.AddMediatR(typeof(Program));
+            _services.AddMediatR(c=>c.RegisterServicesFromAssemblies(typeof(Program).Assembly));
 
             //_singularityContainer =  new Container(builder =>
             //{
@@ -181,85 +180,85 @@ namespace Olbrasoft.Dispatching.Benchmarks
 #pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
-        [Benchmark]
-        public async Task SimpleDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task SimpleDispatcherWithExecutorDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _simpleDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _simpleDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task SimpleDynamicDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task SimpleDynamicDispatcherWithExecutorDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _simpleDynamicDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task GraceDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task GraceDispatcherWithExecutorDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _graceDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _graceDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task GraceDynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task GraceDynamicDispatcherDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _graceDynamicDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task LightInjectDispatcherWithExecutorDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task LightInjectDispatcherWithExecutorDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _lightInjectDispatcherWithExecutor.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _lightInjectDispatcherWithExecutor.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task SingularityDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task SingularityDispatcherDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _singularityDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _singularityDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task SingularityDynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task SingularityDynamicDispatcherDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _singularityDynamicDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
-        [Benchmark]
-        public async Task DynamicDispatcherDispatchAsync()
-        {
-            var request = new AwesomeRequest();
+        //        [Benchmark]
+        //        public async Task DynamicDispatcherDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
 
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _dynamicDispatcher.DispatchAsync(request, default);
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-        }
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _dynamicDispatcher.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
 
         [Benchmark]
         public async Task MediatrSendAsync()
@@ -271,14 +270,27 @@ namespace Olbrasoft.Dispatching.Benchmarks
 #pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
 
+        //        [Benchmark]
+        //        public async Task LightInjectDispatcherDynamicDispatchAsync()
+        //        {
+        //            var request = new AwesomeRequest();
+
+        //#pragma warning disable IDE0059 // Unnecessary assignment of a value
+        //            var response = await _LightInjectDispatcherDynamic.DispatchAsync(request, default);
+        //#pragma warning restore IDE0059 // Unnecessary assignment of a value
+        //        }
+
+
         [Benchmark]
-        public async Task LightInjectDispatcherDynamicDispatchAsync()
+        public async Task RequestHandler()
         {
             var request = new AwesomeRequest();
 
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
-            var response = await _LightInjectDispatcherDynamic.DispatchAsync(request, default);
+            var response = await new AwesomeRequestHandler().Handle(request, default);
 #pragma warning restore IDE0059 // Unnecessary assignment of a value
         }
+
+
     }
 }

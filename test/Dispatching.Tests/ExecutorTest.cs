@@ -36,7 +36,9 @@ namespace Olbrasoft.Dispatching
             IRequestHandler<IRequest<object>, object> handler = null;
 
             //Act
+#pragma warning disable CA1806 // Do not ignore method results
             void Act() => new Executor<IRequest<object>, object>(handler);
+#pragma warning restore CA1806 // Do not ignore method results
 
             //Assert
             Assert.Throws<ArgumentNullException>(Act);
@@ -45,7 +47,7 @@ namespace Olbrasoft.Dispatching
 
         //test ExecuteAsync thorw argument null exception query
         [Fact]
-        public async void ExecuteAsync_Throw_ArgumentNullException_Query()
+        public async Task ExecuteAsync_Throw_ArgumentNullException_Query()
         {
             //Arrange
             var mockHandler = HadlerMock();

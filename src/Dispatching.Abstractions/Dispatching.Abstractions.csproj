@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;netstandard1.6;Net6.0;Net8.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;Net6.0;Net8.0</TargetFrameworks>
 		<LangVersion>12.0</LangVersion>
 		<nullable>enable</nullable>
 		<Description>Abstractions for Dispatching. Send Request return response alternative Mediatr.</Description>
@@ -13,7 +13,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Company>Olbrasoft</Company>
 		<Authors>Jiří Tůma</Authors>
-		<Version>1.8.2</Version>
+		<Version>1.8.4</Version>
 		<Product>Dispatching</Product>
 		<RepositoryType>git</RepositoryType>
 		<AssemblyName>Olbrasoft.Dispatching.Abstractions</AssemblyName>
@@ -22,7 +22,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\..\.editorconfig" Link=".editorconfig" />
 		<None Include="..\..\olbrasoft-dispatching.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>

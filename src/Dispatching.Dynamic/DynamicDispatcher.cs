@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Olbrasoft.Dispatching;
 
-public class DynamicDispatcher(Factory factory) : DispatcherBase(factory)
+public class DynamicDispatcher(Factory factory) : BaseDispatcher(factory)
 {
     public override Task<TResponse> DispatchAsync<TResponse>(IRequest<TResponse> request, CancellationToken token = default)
     {
