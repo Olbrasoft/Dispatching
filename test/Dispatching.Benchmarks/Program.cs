@@ -1,21 +1,8 @@
-﻿using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Jobs;
+﻿// See https://aka.ms/new-console-template for more information
 using BenchmarkDotNet.Running;
-using BenchmarkDotNet.Toolchains.InProcess.Emit;
 
-namespace Olbrasoft.Dispatching.Benchmarks
+namespace Dispatching.Benchmarks;
+public class Program
 {
-    internal class Program
-    {
-#pragma warning disable IDE0060 // Remove unused parameter
-        private static void Main(string[] args)
-#pragma warning restore IDE0060 // Remove unused parameter
-        {
-            var config = ManualConfig.Create(DefaultConfig.Instance);
-
-            config.AddJob(Job.Default.WithToolchain(InProcessEmitToolchain.Instance));
-                          
-            BenchmarkRunner.Run<SendRequestsBenchmarks>(config);
-        }
-    }
+    public static void Main(string[] args) => BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
 }

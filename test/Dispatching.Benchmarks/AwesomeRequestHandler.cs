@@ -1,18 +1,17 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using MediatR;
 
-namespace Olbrasoft.Dispatching.Benchmarks
+namespace Dispatching.Benchmarks;
+
+public class AwesomeRequestHandler : IRequestHandler<AwesomeRequest, string>, Olbrasoft.Dispatching.IRequestHandler<AwesomeRequest, string>
 {
-    public class AwesomeRequestHandler : IRequestHandler<AwesomeRequest, object>, MediatR.IRequestHandler<AwesomeRequest, object>
+    public Task<string> Handle(AwesomeRequest request, CancellationToken cancellationToken)
     {
-        public async Task<object> Handle(AwesomeRequest request, CancellationToken cancellationToken)
-        {
-            return await Task.FromResult(new object());
-        }
+        return Task.FromResult("Hello World");
+    }
 
-        public async Task<object> HandleAsync(AwesomeRequest request, CancellationToken token)
-        {
-            return await Task.FromResult(new object());
-        }
+    public Task<string> HandleAsync(AwesomeRequest request, CancellationToken token)
+    {
+        return Task.FromResult("Hello World");
+
     }
 }
